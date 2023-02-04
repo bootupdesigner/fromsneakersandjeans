@@ -1,0 +1,53 @@
+import React, { useState, useEffect } from  'react';
+import { View, Text, TextInput, StyleSheet, SafeAreaView } from 'react-native';
+
+
+const score = [
+    {
+        id: '1',
+        options: [
+            { label: '1 - Not at all true', value: 1 },
+            { label: '2 - Slightly true', value: 2 },
+            { label: '3 - Unsure', value: 3 },
+            { label: '4 - Mostly true', value: 4 },
+            { label: '5 - True', value: 5 }
+        ]
+    },
+    {
+        id: '2',
+        options: [
+            { label: '1 - Not at all true', value: 1 },
+            { label: '2 - Slightly true', value: 2 },
+            { label: '3 - Unsure', value: 3 },
+            { label: '4 - Mostly true', value: 4 },
+            { label: '5 - True', value: 5 }
+        ]
+    },
+    {
+        id: '3',
+        options: [
+            { label: '1 - Not at all true', value: 1 },
+            { label: '2 - Slightly true', value: 2 },
+            { label: '3 - Unsure', value: 3 },
+            { label: '4 - Mostly true', value: 4 },
+            { label: '5 - True', value: 5 }
+        ]
+    }
+]
+
+const Chat = () => {
+    const sum = score;
+    const [total, setTotal] = useState('');
+    return (
+        <SafeAreaView>
+        <Text>Enter Score 1-5</Text>
+        <TextInput onChangeText={(total) => setTotal(total)} placeholder="score 1-5" keyboardType="numeric" />
+
+      </SafeAreaView>
+    )
+};
+
+const styles = StyleSheet.create({});
+
+export default Chat:
+
