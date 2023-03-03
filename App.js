@@ -10,44 +10,44 @@ import { useState } from 'react';
 import StackNavigator from './StackNavigator';
 
 import tour1 from './images/tour1.png';
-import tour2 from './images/tour2.png';
-import tour3 from './images/tour3.png';
-import tour4 from './images/tour4.png';
-import tour5 from './images/tour5.png';
+import tour5 from './images/tour2.png';
+import tour4 from './images/tour3.png';
+import tour3 from './images/tour4.png';
+import tour2 from './images/tour5.png';
 
 const slides = [
   {
     key: 1,
-    title: 'Title 1',
-    text: 'Description.\nSay something cool',
+    title: 'Hey Girl',
+    text: 'Take a Tour with Teen Candi',
     image: tour1,
     backgroundColor: '#59b2ab',
   },
   {
     key: 2,
-    title: 'Title 2',
-    text: 'Description.\nSay something cool',
+    title: `Let's Start Somethin'`,
+    text: `Use the play and stop buttons to read for you \nwhen you're doing other things or you're just too tired`,
     image: tour2,
     backgroundColor: '#59b2ab',
   },
   {
     key: 3,
-    title: 'Title 3',
-    text: 'Description.\nSay something cool',
+    title: `Saw Somethin' Good`,
+    text: `Use the next and back buttons \nto jump back and forth a chapter`,
     image: tour3,
     backgroundColor: '#59b2ab',
   },
   {
     key: 4,
-    title: 'Title 4',
-    text: 'Description.\nSay something cool',
+    title: `PINK POSITUDE`,
+    text: `Click the Pink Pos cloud whenever you see it to \nCHANGE THE WAY YOU THINK ABOUT YOU`,
     image: tour4,
     backgroundColor: '#59b2ab',
   },
   {
     key: 5,
-    title: 'Title 5',
-    text: 'Description.\nSay something cool',
+    title: `Take Care Of You`,
+    text: `It's never over! \nUse these buttons to find the right help for your situation`,
     image: tour5,
     backgroundColor: '#59b2ab',
   },
@@ -68,7 +68,7 @@ export default function App() {
     return (
       <View style={styles.slide}>
 
-      <StatusBar hidden={true} />
+        <StatusBar hidden={true} />
         <Text style={styles.title}>{item.title}</Text>
         <Image style={styles.image} source={item.image} />
         <Text style={styles.text}>{item.text}</Text>
@@ -77,16 +77,16 @@ export default function App() {
   };
   return (
     <>
-    {showRealApp ? (
-    <SafeAreaProvider>
-      <StatusBar hidden={true} />
-      <NavigationContainer style={styles.container}>
-        <StackNavigator />
-      </NavigationContainer>
-    </SafeAreaProvider>
-    ) : (
-      <AppIntroSlider data={slides} renderItem={RenderItem} onDone={onDone} showSkipButton={true} onSkip={onSkip} />
-    )}
+      {showRealApp ? (
+        <SafeAreaProvider>
+          <StatusBar hidden={true} />
+          <NavigationContainer style={styles.container}>
+            <StackNavigator />
+          </NavigationContainer>
+        </SafeAreaProvider>
+      ) : (
+        <AppIntroSlider style={{backgroundColor: 'rgb(236,0,140)'}} data={slides} renderItem={RenderItem} onDone={onDone} showSkipButton={true} onSkip={onSkip} />
+      )}
     </>
   );
 }
@@ -94,17 +94,27 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
   },
-slide:{
-  flex:1,
-  alignItems: 'center',
-  backgroundColor: '#rgb(236,0,140)'
+  slide: {
+    flex: 1,
+    height: '100%',
+    alignItems: 'center',
 
-},
+  },
   image: {
     resizeMethod: 'auto',
     resizeMode: 'contain',
-    height:300,
+    height: 220,
     width: '100%'
   },
+  title:{
+    fontWeight: 'bold',
+    fontSize: 32
+  },
+  text:{
+    flex:1,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  }
 
 })

@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/core';
 import Swiper from 'react-native-web-swiper';
 import * as Speech from 'expo-speech';
 
-import backgroundImage from '../images/overlay_background.jpg';
+import backgroundImage from '../images/overlay_background.png';
 import stopButton from '../images/stopButton.png';
 
 import chapterSlides from './chapterSlides';
@@ -55,7 +55,7 @@ const Chapters = ({ navigation }) => {
                 </View>
 
                 <TouchableOpacity style={styles.center} onPress={() => navigation.navigate(slide.page)} >
-                    <Text style={styles.bold}>Chapter {slide.id}</Text>
+                    <Text style={styles.h1}>Chapter {slide.id}</Text>
                     <Image style={styles.descriptionTitle} source={slide.title} accessibilityLabel={slide.chapterTitleAlt} />
                     <Text style={styles.paragraph}>{slide.description}</Text>                  
                 </TouchableOpacity>

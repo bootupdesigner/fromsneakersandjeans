@@ -3,7 +3,6 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Chapters from './screens/Chapters';
-import Welcome from './screens/Welcome';
 import Introduction from './chapters/Introduction';
 import SelfWorth from './chapters/SelfWorth';
 import Positude from './chapters/Positude';
@@ -16,6 +15,7 @@ import Safety from './chapters/Safety';
 import Closing from './chapters/Closing';
 import Hotlines from './screens/Hotlines';
 import Websites from './screens/Websites';
+import Chat from './chapters/Chat';
 
 
 const Stack = createNativeStackNavigator();
@@ -27,7 +27,6 @@ const StackNavigator = () => {
       screenOptions={{
         headerShown: false
       }}  >
-      <Stack.Screen name="welcome" component={Welcome} />
       <Stack.Screen name="chapters" component={Chapters} />
       <Stack.Screen name="introduction" component={Introduction} />
       <Stack.Screen name="self-worth" component={SelfWorth} />
@@ -41,6 +40,7 @@ const StackNavigator = () => {
       <Stack.Screen name="closing" component={Closing} />
       <Stack.Screen name="hotlines" component={Hotlines} />
       <Stack.Screen name="websites" component={Websites} />
+      <Stack.Screen name="chat" component={Chat} />
     </Stack.Navigator>
   )
 }

@@ -3,152 +3,91 @@ import { View, Text, TextInput, StyleSheet } from 'react-native';
 
 import Swiper from 'react-native-web-swiper';
 
-const score = [
-    {
-        id: '1',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I behave the way others expect me to so that they will like me.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '2',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I don’t think I’m on equal grounds with others and have difficulties developing positive relationships.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '3',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I rarely trust myself nor feel strong enough to handle things on my own.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '4',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I don’t take compliments very well because I think the person isn’t being truthful.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '5',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I am afraid of being judged by others.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '6',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I often feel inferior to others.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '7',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I let other people set the standards for my life.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '8',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I find it hard to forgive myself for making mistakes.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '9',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I feel a sense of failure when my grades are lower than those of my peers.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '10',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I wish I was more like other people—I feel so different.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-]
+const score =
+{
+    id: '1',
+    heading: `Calculate Your Self-Worth`,
+    summary: [
+        `I behave the way others expect me to so that they will like me.`,
+        `I don’t think I’m on equal grounds with others and have difficulties developing positive relationships.`,
+        `I rarely trust myself nor feel strong enough to handle things on my own.`,
+        `I don’t take compliments very well because I think the person isn’t being truthful.`,
+        `I am afraid of being judged by others.`,
+        `I often feel inferior to others.`,
+        `I let other people set the standards for my life.`,
+        `I find it hard to forgive myself for making mistakes.`,
+        `I feel a sense of failure when my grades are lower than those of my peers.`,
+        `I wish I was more like other people—I feel so different.`,
+    ],
+};
+
 
 const Chat = () => {
 
-    const [total, setTotal] = useState('0');
-    const [currentScore, setCurrentScore] = useState('');
+    const [form, setForm] = useState({
+        question1: '',
+        question2: '',
+        question3: '',
+        question4: '',
+        question5: '',
+        question6: '',
+        question7: '',
+        question8: '',
+        question9: '',
+        question10: '',
+    });
 
-    const handleScoreChange = (value) => {
-        setCurrentScore(value);
-        setTotal(total + parseInt(value));
-    }
-
-    const slide = score;
+    const [total, setTotal] = useState(0);
+    useEffect(() => {
+        const sum = Object.values(form).reduce((acc, curr) => {
+            // Parse the input value as a number, or use 0 if it's not a valid number
+            const value = Number(curr) || 0;
+            return acc + value;
+        }, 0);
+        setTotal(sum);
+    }, [form])
 
     return (
-        <Swiper>
-        {slide.options ?
-            <View style={styles.radioForm}>
-                <Text style={styles.paragraph}>{slide.summary}</Text>
-                
+        <Swiper style={styles.radioForm}>
+            <View>
+                <Text style={styles.paragraph}>{score.summary[1]}</Text>
+
 
                 <Text>Enter Score 1-5</Text>
-                <TextInput onChangeText={handleScoreChange} placeholder="score 1-5" keyboardType="numeric" />
+                <TextInput onChangeText={(text) => setForm({ ...form, question2: text })} placeholder="score 1-5" keyboardType="numeric" />
+            </View>
+            <View>
+                <Text style={styles.paragraph}>{score.summary[2]}</Text>
+
+
+                <Text>Enter Score 1-5</Text>
+                <TextInput onChangeText={(text) => setForm({ ...form, question3: text })} placeholder="score 1-5" keyboardType="numeric" />
+            </View>
+            <View>
+                <Text style={styles.paragraph}>{score.summary[3]}</Text>
+
+
+                <Text>Enter Score 1-5</Text>
+                <TextInput onChangeText={(text) => setForm({ ...form, question4: text })} placeholder="score 1-5" keyboardType="numeric" />
+            </View>
+            <View>
+                <Text style={styles.paragraph}>{score.summary[4]}</Text>
+
+
+                <Text>Enter Score 1-5</Text>
+                <TextInput onChangeText={(text) => setForm({ ...form, question5: text })} placeholder="score 1-5" keyboardType="numeric" />
+            </View>
+            <View>
+                <Text style={styles.paragraph}>{score.summary[5]}</Text>
+
+
+                <Text>Enter Score 1-5</Text>
+                <TextInput onChangeText={(text) => setForm({ ...form, question6: text })} placeholder="score 1-5" keyboardType="numeric" />
+            </View>
+
+            <View>
                 <Text>Your total: {total}</Text>
-            </View> : null}
+            </View>
         </Swiper>
     )
 };

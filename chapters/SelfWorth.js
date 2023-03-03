@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, RadioButtonGroup, TouchableOpacity, StyleSheet, FlatList, Pressable, ImageBackground, Modal, Image, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 
+import { DataTable } from 'react-native-paper';
+import { Table, Row, Rows } from 'react-native-table-component';
 import Swiper from 'react-native-web-swiper';
 import * as Speech from 'expo-speech';
 import RadioForm from 'react-native-simple-radio-button';
@@ -28,17 +30,27 @@ const SelfWorth = ({ navigation }) => {
 
     const slides = selfWorthSlides;
 
+    const [form, setForm] = useState({
+        question1: '',
+        question2: '',
+        question3: '',
+        question4: '',
+        question5: '',
+        question6: '',
+        question7: '',
+        question8: '',
+        question9: '',
+        question10: '',
+    });
+
     const [total, setTotal] = useState(0);
-    const [currentScore, setCurrentScore] = useState(0);
-
-    const handleScoreChange = (event) => {
-        setCurrentScore(event.nativeEvent.text);
-        setTotal(prevTotal => prevTotal + currentScore);
-    }
-
     useEffect(() => {
-        setTotal(prevTotal => prevTotal + currentScore);
-    }, [currentScore]);
+        const sum = Object.values(form).reduce((acc, curr) => {
+            const value = Number(curr) || 0;
+            return acc + value;
+        }, 0);
+        setTotal(sum);
+    }, [form]);
 
     const speakText = (text) => {
         const firstSlide = (text);
@@ -71,6 +83,10 @@ const SelfWorth = ({ navigation }) => {
     useEffect(() => {
         updateModal()
     }, [setCurrentSlide])
+
+    const inputElement = (data, index) => (
+        <TextInput keyboardType="numeric" placeholder="1-5" />
+    )
 
     return (
         <View style={styles.container}>
@@ -146,14 +162,28 @@ const SelfWorth = ({ navigation }) => {
                                                     )) : null}
                                             </View>
                                         )) : null}
-                                        {slide.options ?
-                                            <View style={styles.radioForm}>
-                                                <Text style={styles.paragraph}>{slide.summary}</Text>
-                                                
+                                        {slide.table ?
+                                            <View style={{ borderWidth: 1, borderStyle: 'solid' }}>
+                                                {slide.table.map((table, index) => (
+                                                    <View key={index}>
+                                                        <Text style={{borderBottomWidth:1, borderStyle:'solid', fontWeight:'bold', backgroundColor:'rgb(236,0,140)'}}>{table.tableHead}</Text>
+                                                        <View style={{flexDirection:'row', borderBottomWidth:1, borderStyle:'solid'}}>
+                                                                <Text style={{width:'80%', fontWeight:'bold'}}>Statement</Text>
+                                                                <Text style={{width:'20%', fontWeight:'bold'}}>Number</Text>
+                                                                </View>
 
-                                                <Text>Enter Score 1-5</Text>
-                                                <TextInput onChange={handleScoreChange} placeholder="score 1-5" keyboardType="numeric" />
-                                                <Text>Your total: {total}</Text>
+                                                        {table.tableData.map((question, index) => (
+                                                            <View key={index} style={{flexDirection:'row', borderBottomWidth:1, borderStyle:'solid'}}>
+                                                                <Text style={{width:'80%', borderRightWidth:1, paddingHorizontal:3}}>{question}</Text>
+                                                                <TextInput style={{width:'20%'}} placeholder='1-5' keyboardType='numeric'/>
+                                                            </View>
+                                                        ))}
+                                                        <View key={index} style={{flexDirection:'row', borderBottomWidth:1, borderStyle:'solid'}}>
+                                                            <Text style={{width:'80%', borderRightWidth:1, paddingHorizontal:3}}>{table.tableFooter}</Text>
+                                                            <TextInput style={{width:'20%'}} placeholder='1-50' keyboardType='numeric'/>
+                                                        </View>
+                                                    </View>
+                                                ))}
                                             </View> : null}
 
                                         {slide.numberList ?
@@ -310,6 +340,10 @@ const styles = ({
         justifyContent: 'space-between',
         alignItems: 'center',
         alignContent: 'center',
+    },
+    head: {
+        flex: 1,
+        width: '100%'
     },
 });
 

@@ -116,130 +116,31 @@ const selfWorthSlides = [
     {
         id: '5',
         heading: `Calculate Your Self-Worth`,
-        summary: `I behave the way others expect me to so that they will like me.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '6',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I don’t think I’m on equal grounds with others and have difficulties developing positive relationships.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '7',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I rarely trust myself nor feel strong enough to handle things on my own.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '8',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I don’t take compliments very well because I think the person isn’t being truthful.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '9',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I am afraid of being judged by others.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '10',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I often feel inferior to others.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '11',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I let other people set the standards for my life.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '12',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I find it hard to forgive myself for making mistakes.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '13',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I feel a sense of failure when my grades are lower than those of my peers.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
-    },
-    {
-        id: '14',
-        heading: `Calculate Your Self-Worth`,
-        summary: `I wish I was more like other people—I feel so different.`,
-        options: [
-            { label: '1 - Not at all true', value: 1 },
-            { label: '2 - Slightly true', value: 2 },
-            { label: '3 - Unsure', value: 3 },
-            { label: '4 - Mostly true', value: 4 },
-            { label: '5 - True', value: 5 }
-        ]
+        table:[ {
+                tableHead:`1 - Not at all True 2 - Slightly true 3 - Unsure 4 - Mostly true 5 - True`,
+                tableFooter:`Add up your score:`,
+                tableTitle: [`Statement`, `Number`],
+                tableData: [
+                    `I behave the way others expect me to so that they will like me.`,
+                    `I don’t think I’m on equal grounds with others and have difficulties developing positive relationships.`,
+                    `I rarely trust myself nor feel strong enough to handle things on my own.`,
+                    `I don’t take compliments very well because I think the person isn’t being truthful.`,
+                    `I am afraid of being judged by others.`,
+                    `I often feel inferior to others.`,
+                    `I let other people set the standards for my life.`,
+                    `I find it hard to forgive myself for making mistakes.`,
+                    `I feel a sense of failure when my grades are lower than those of my peers.`,
+                    `I wish I was more like other people—I feel so different.`,
+                ],
+            }]
     },
     {
         id: '15',
-        heading: `Your Self-Worth Score Is:`,
+        heading: `What do your scores mean?`,
         bullets: [
             {
 
-                heading: `What do your scores mean?`,
+
                 paragraph: [`41 to 50 You have very fragile self-worth. Find out more about some of the things that may be causing you to feel poorly about yourself.`,
 
                     `31 to 40 Your somewhat fragile self-worth is holding you back. You may want to learn some strategies that will prevent your self-worth from plunging further.`,
