@@ -51,7 +51,7 @@ const Hotlines = ({ navigation }) => {
                 </View>
                 {/* end of page header and navigation */}
 
-                <Swiper controlsProps={{ dotsPos: false }} showsButtons={true} loop={false} >
+                <Swiper controlsProps={{ dotsPos: 'bottom' }} showsButtons={true} loop={false} >
                     {slides.map((slide, id) => {
                         return (
                             <View key={id} style={{flex:1}}>
@@ -168,6 +168,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         alignContent: 'center',
+        marginBottom:35
     },
     paragraph: {
         fontSize: 16,

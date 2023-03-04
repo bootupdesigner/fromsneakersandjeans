@@ -25,7 +25,7 @@ const chapterSlides = [
       id: '1',
       title: C1Title,
       chapterTitleAlt: 'chapter 1, introduction',
-      description: 'Did you know that the introduction of a book is used to set the tone of the book?',
+      description: 'Did you know the introduction of a book is used to set the tone for the reader?',
       thumbnail: C1Thumbnail,
       thumbnail_alt: "From Sneakers and Jeans Avatar for Introduction",
       page: 'introduction'

@@ -18,7 +18,7 @@ import tour2 from './images/tour5.png';
 const slides = [
   {
     key: 1,
-    title: 'Hey Girl',
+    title: 'HEY, GIRL, HEY',
     text: 'Take a Tour with Teen Candi',
     image: tour1,
     backgroundColor: '#59b2ab',

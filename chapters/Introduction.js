@@ -85,7 +85,7 @@ const Introduction = ({ navigation }) => {
                 </View>
                 {/* end of page header and navigation */}
 
-                <Swiper controlsProps={{ dotsPos: false }} onIndexChanged={(i) => { setCurrentSlide(slides[i]) }} showsButtons={true} loop={false} >
+                <Swiper controlsProps={{ dotsPos: 'bottom' }} onIndexChanged={(i) => { setCurrentSlide(slides[i]) }} showsButtons={true} loop={false} >
 
                     {slides.map((slide, id) => {
                         return (
@@ -202,6 +202,7 @@ const styles = ({
         justifyContent: 'space-between',
         alignItems: 'center',
         alignContent: 'center',
+        marginBottom:35
     },
     row: {
         flexDirection: 'row',

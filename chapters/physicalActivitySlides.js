@@ -110,7 +110,9 @@ const physicalActivitySlides = [
                     `I encourage you to let your body grow and develop in its own way. Eat healthy, be physically active and see your doctor yearly for regular checkups. If there is anything wrong or if there are any problems with the way you are developing and growing, your doctor will let you know. But take it from experience, I have learned, that WE are PERFECT just as we are.`
                 ],
             }
-        ]
+        ],
+        image: Thumbnail,
+        imageAlt: `chapter 6 physical activity and nutrition`
     },
     {
         id: '7',

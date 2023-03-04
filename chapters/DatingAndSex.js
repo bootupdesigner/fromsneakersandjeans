@@ -83,7 +83,7 @@ const DatingAndSex = ({ navigation }) => {
         </View>
         {/* end of page header and navigation */}
 
-        <Swiper controlsProps={{ dotsPos: false }} onIndexChanged={(i) => { setCurrentSlide(slides[i]) }} showsButtons={true} loop={false} >
+        <Swiper controlsProps={{ dotsPos: 'bottom' }} onIndexChanged={(i) => { setCurrentSlide(slides[i]) }} showsButtons={true} loop={false} >
           {slides.map((slide, id) => {
             return (
               <View key={id} style={styles.content}>
@@ -325,6 +325,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     alignContent: 'center',
+    marginBottom:35
   },
 
 });

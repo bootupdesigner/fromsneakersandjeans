@@ -2,6 +2,9 @@ const hotlineSlides = [
     {
         help: "Violence and Abuse",
         id: "1",
+        notes: [
+            `National Toll-Free Help Lines`,
+            'National Toll-Free Help Lines that can be dialed toll-free from anywhere in the United States. These organizations provide help for homelessness, abuse, mental health information and referrals, and in some cases, crisis counseling.'],
         contacts: [
             {
                 id: "1",
@@ -24,12 +27,11 @@ const hotlineSlides = [
         ],
     },
     {
-        help: "Mental Help and Substance abuse",
+        help: "Mental Health and Substance Abuse",
         id: "2",
         notes: [
             `National Toll-Free Help Lines`,
-            `The numbers listed below can be dialed toll-free from anywhere within the United States. These organizations provide mental health information and referrals and, in some cases, crisis counseling.`
-        ],
+            'National Toll-Free Help Lines that can be dialed toll-free from anywhere in the United States. These organizations provide help for homelessness, abuse, mental health information and referrals, and in some cases, crisis counseling.'],
         contacts: [
             {
                 id: "1",
@@ -64,6 +66,9 @@ const hotlineSlides = [
     {
         help: "Runaways/Youth Assistance",
         id: "3",
+        notes: [
+            `National Toll-Free Help Lines`,
+            'National Toll-Free Help Lines that can be dialed toll-free from anywhere in the United States. These organizations provide help for homelessness, abuse, mental health information and referrals, and in some cases, crisis counseling.'],
         contacts: [
             {
                 id: "1",
@@ -83,6 +88,9 @@ const hotlineSlides = [
     {
         help: "Self-Help",
         id: "4",
+        notes: [
+            `National Toll-Free Help Lines`,
+            'National Toll-Free Help Lines that can be dialed toll-free from anywhere in the United States. These organizations provide help for homelessness, abuse, mental health information and referrals, and in some cases, crisis counseling.'],
         contacts: [
             {
                 id: "1",
