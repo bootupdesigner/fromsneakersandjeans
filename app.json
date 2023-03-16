@@ -1,9 +1,15 @@
 {
   "expo": {
-    "name": "fromSneakers",
-    "slug": "fromSneakers",
+    "name": "From Sneakers and Jeans",
+    "slug": "Teen Candi",
     "version": "1.0.0",
     "orientation": "landscape",
+    "icon": "./images/icon.png",
+  "splash": {
+    "image" : "./images/splash.png",
+    "resizeMode": "contain",
+    "backgroundColor": "#ff0099"
+  },
     "assetBundlePatterns": [
       "**/*"
     ]

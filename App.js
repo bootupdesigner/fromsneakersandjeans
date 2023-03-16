@@ -21,35 +21,35 @@ const slides = [
     title: 'HEY, GIRL, HEY',
     text: 'Take a Tour with Teen Candi',
     image: tour1,
-    backgroundColor: '#59b2ab',
+    backgroundColor: '#ff0099',
   },
   {
     key: 2,
     title: `Let's Start Somethin'`,
     text: `Use the play and stop buttons to read for you \nwhen you're doing other things or you're just too tired`,
     image: tour2,
-    backgroundColor: '#59b2ab',
+    backgroundColor: '#ff0099',
   },
   {
     key: 3,
     title: `Saw Somethin' Good`,
     text: `Use the next and back buttons \nto jump back and forth a chapter`,
     image: tour3,
-    backgroundColor: '#59b2ab',
+    backgroundColor: '#ff0099',
   },
   {
     key: 4,
     title: `PINK POSITUDE`,
     text: `Click the Pink Pos cloud whenever you see it to \nCHANGE THE WAY YOU THINK ABOUT YOU`,
     image: tour4,
-    backgroundColor: '#59b2ab',
+    backgroundColor: '#ff0099',
   },
   {
     key: 5,
     title: `Take Care Of You`,
     text: `It's never over! \nUse these buttons to find the right help for your situation`,
     image: tour5,
-    backgroundColor: '#59b2ab',
+    backgroundColor: '#ff0099',
   },
 ]
 
@@ -85,7 +85,7 @@ export default function App() {
           </NavigationContainer>
         </SafeAreaProvider>
       ) : (
-        <AppIntroSlider style={{backgroundColor: 'rgb(236,0,140)'}} data={slides} renderItem={RenderItem} onDone={onDone} showSkipButton={true} onSkip={onSkip} />
+        <AppIntroSlider style={{backgroundColor: '#ff0099'}} data={slides} renderItem={RenderItem} onDone={onDone} showSkipButton={true} onSkip={onSkip} />
       )}
     </>
   );
