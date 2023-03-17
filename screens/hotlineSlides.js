@@ -9,7 +9,7 @@ const hotlineSlides = [
             {
                 id: "1",
                 group: "Childhelp National Child Abuse Hotline",
-                about_group: [`Call: 800-4-A-CHILD`, `Visit: www.CHILDHELP.org`]
+                about_group: [`Call: 800-4-A-CHILD (800-422-4453)`, `Visit: www.CHILDHELP.org`]
             },
             {
                 id: "2",
@@ -35,8 +35,8 @@ const hotlineSlides = [
         contacts: [
             {
                 id: "1",
-                group: "Al-Anon and AlaTeen: Meeting information for teens and families	888-425-2666",
-                about_group: [`Call: 888-4AL-ANON`, `Visit: www.AL-ANON.ALATEEN.org`],
+                group: "Al-Anon and AlaTeen: Meeting information for teens and families",
+                about_group: [`Call: 888-4AL-ANON (888-425-2666)`, `Visit: www.AL-ANON.org`],
             },
             {
                 id: "2",
@@ -128,25 +128,20 @@ const hotlineSlides = [
             },
             {
                 id: "6",
-                group: "American Social Health Association STD Hotline",
+                group: "American Sexual Health Association STD Hotline",
                 about_group: [
                     `Call: 800-227-8922`,
                     `Visit: www.ASHASEXUALHEALTH.org`]
             },
             {
                 id: "7",
-                group: "Teen Health Questions: Lucile Packard Children’s Hospital Teen Resource Line offers confidential health information",
-                about_group: [`Call: 888-711-TEEN`]
-            },
-            {
-                id: "8",
                 group: "National Center for Victims of Crime",
                 about_group: [
                     `Call: 800-FYI-CALL (394-2255)`,
                     `www.VICTIMSOFCRIME.org`]
             },
             {
-                id: "9",
+                id: "8",
                 group: "National Eating Disorders Association Information and Referral Helpline: Support for people struggling with eating disorders and their family",
                 about_group: [
                     `Call: 800-931-2237`,

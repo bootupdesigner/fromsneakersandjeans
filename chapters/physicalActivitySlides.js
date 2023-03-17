@@ -16,7 +16,7 @@ const physicalActivitySlides = [
                     `reduce stress and manage depression`,
                     `manage diabetes.`
                 ],
-                paragraph: [`Here are the governmental recommendations for physical activity. These can be found at www.MyPyramid.gov. For health benefits, physical activity should be moderate or vigorous and add up to at least thirty minutes a day.`]
+                paragraph: [`Here are the governmental recommendations for physical activity. These can be found at www.MyPlate.gov. For health benefits, physical activity should be moderate or vigorous and add up to at least thirty minutes a day.`]
             }
         ],
         image: Thumbnail,
@@ -64,7 +64,7 @@ const physicalActivitySlides = [
         heading: `Diet`,
         bullets: [
             {
-                summary: [`Diet is more than eating lettuce and carrots. It’s about having balance in your meals. The right diet can combat and fight all types of diseases and conditions. See the new and improved governmental recommendations for food and health at www.MyPyramid.gov. For your reference, here are the highlights:`],
+                summary: [`Diet is more than eating lettuce and carrots. It’s about having balance in your meals. The right diet can combat and fight all types of diseases and conditions. See the new and improved governmental recommendations for food and health at www.MyPlate.gov. For your reference, here are the highlights:`],
                 bullet: [],
             }
         ],
@@ -124,7 +124,7 @@ const physicalActivitySlides = [
             },
             {
                 id: '2',
-                bullet: `Visit www.MyPyramid.gov for healthy physical activity and nutrition recommendations.`
+                bullet: `Visit www.MyPlate.gov for healthy physical activity and nutrition recommendations.`
             },
             {
                 id: '3',

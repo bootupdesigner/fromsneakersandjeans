@@ -136,7 +136,7 @@ const selfWorthSlides = [
     },
     {
         id: '15',
-        heading: `What do your scores mean?`,
+        heading: `What Does Your Score Mean?`,
         bullets: [
             {
 
