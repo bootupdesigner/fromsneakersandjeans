@@ -125,19 +125,13 @@ const hotlineSlides = [
             },
             {
                 id: "6",
-                group: "National Eating Disorders Association",
-                about_group: [`Information on eating disorders and referrals for treatment.`,
-                    `Call: 1-800-931-2237 (24-hour access)`]
-            },
-            {
-                id: "7",
                 group: "National Eating Disorders Association Information and Referral Helpline: Support for people struggling with eating disorders and their family",
                 about_group: [
                     `Call: 800-931-2237`,
                     `Visit: www.NATIONALEATINGDISORDERS.org`]
             },
             {
-                id: "8",
+                id: "7",
                 group: "Safe Sitter",
                 about_group: [`Trains adolescents ages eleven to thirteen on how to be effective baby sitters.`,
                     `Call: 1-800-255-4089`,
