@@ -108,13 +108,21 @@ const styles = StyleSheet.create({
   },
   title:{
     fontWeight: 'bold',
-    fontSize: 32
+    fontSize: 32,
+    color:'#ffffff',
+    textShadowColor:"#000000",
+    textShadowOffset: {width: 2, height: 2},
+    textShadowRadius: 2
   },
   text:{
     flex:1,
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
+    color:'#ffffff',
+    textShadowColor:"#000000",
+    textShadowOffset: {width: 2, height: 2},
+    textShadowRadius: 2
   }
 
 })
