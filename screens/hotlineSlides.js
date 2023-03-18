@@ -3,7 +3,6 @@ const hotlineSlides = [
         help: "Violence and Abuse",
         id: "1",
         notes: [
-            `National Toll-Free Help Lines`,
             'National Toll-Free Help Lines that can be dialed toll-free from anywhere in the United States. These organizations provide help for homelessness, abuse, mental health information and referrals, and in some cases, crisis counseling.'],
         contacts: [
             {
@@ -30,7 +29,6 @@ const hotlineSlides = [
         help: "Mental Health and Substance Abuse",
         id: "2",
         notes: [
-            `National Toll-Free Help Lines`,
             'National Toll-Free Help Lines that can be dialed toll-free from anywhere in the United States. These organizations provide help for homelessness, abuse, mental health information and referrals, and in some cases, crisis counseling.'],
         contacts: [
             {
@@ -67,7 +65,6 @@ const hotlineSlides = [
         help: "Runaways/Youth Assistance",
         id: "3",
         notes: [
-            `National Toll-Free Help Lines`,
             'National Toll-Free Help Lines that can be dialed toll-free from anywhere in the United States. These organizations provide help for homelessness, abuse, mental health information and referrals, and in some cases, crisis counseling.'],
         contacts: [
             {
@@ -89,7 +86,6 @@ const hotlineSlides = [
         help: "Self-Help",
         id: "4",
         notes: [
-            `National Toll-Free Help Lines`,
             'National Toll-Free Help Lines that can be dialed toll-free from anywhere in the United States. These organizations provide help for homelessness, abuse, mental health information and referrals, and in some cases, crisis counseling.'],
         contacts: [
             {
