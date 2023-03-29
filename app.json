@@ -2,16 +2,20 @@
   "expo": {
     "name": "From Sneakers and Jeans",
     "slug": "PinkPosGirls",
-    "version": "1.0.0",
-    "orientation": "landscape",
+    "version": "1.0.1",
     "icon": "./images/icon.png",
-  "splash": {
-    "image" : "./images/splash.png",
-    "resizeMode": "contain",
-    "backgroundColor": "#ffffff"
-  },
+    "splash": {
+      "image": "./images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "997d2312-d3dd-499b-8b58-0b5ef4da1d65"
+      }
+    }
   }
 }

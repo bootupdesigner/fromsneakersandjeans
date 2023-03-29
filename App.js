@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
+import * as ScreenOrientation from 'expo-screen-orientation'
 
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { useState } from 'react';
@@ -54,6 +55,9 @@ const slides = [
 ]
 
 export default function App() {
+
+  const screenOrientation = ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
+
   const [showRealApp, setShowRealApp] = useState(false);
 
   const onDone = () => {
@@ -78,14 +82,14 @@ export default function App() {
   return (
     <>
       {showRealApp ? (
-        <SafeAreaProvider>
+        <SafeAreaProvider onLoad={screenOrientation}>
           <StatusBar hidden={true} />
           <NavigationContainer style={styles.container}>
             <StackNavigator />
           </NavigationContainer>
         </SafeAreaProvider>
       ) : (
-        <AppIntroSlider style={{backgroundColor: '#ff0099'}} data={slides} renderItem={RenderItem} onDone={onDone} showSkipButton={true} onSkip={onSkip} />
+        <AppIntroSlider style={{ backgroundColor: '#ff0099' }} data={slides} renderItem={RenderItem} onDone={onDone} showSkipButton={true} onSkip={onSkip} />
       )}
     </>
   );
@@ -106,22 +110,22 @@ const styles = StyleSheet.create({
     height: 220,
     width: '100%'
   },
-  title:{
+  title: {
     fontWeight: 'bold',
     fontSize: 32,
-    color:'#ffffff',
-    textShadowColor:"#000000",
-    textShadowOffset: {width: 2, height: 2},
+    color: '#ffffff',
+    textShadowColor: "#000000",
+    textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 2
   },
-  text:{
-    flex:1,
+  text: {
+    flex: 1,
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
-    color:'#ffffff',
-    textShadowColor:"#000000",
-    textShadowOffset: {width: 2, height: 2},
+    color: '#ffffff',
+    textShadowColor: "#000000",
+    textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 2
   }
 
