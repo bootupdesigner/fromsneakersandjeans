@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, TouchableOpacity, StyleSheet, ScrollView, ImageBackground, Image, Modal, Pressable, StatusBar } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, ImageBackground, Image, Modal, Pressable, StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import React, { useState, useEffect } from 'react';
 
@@ -12,8 +12,8 @@ import playButton from '../images/playButton.png';
 import stopButton from '../images/stopButton.png';
 
 import pinkPosiImage from '../images/pinkPosi.png'
-import introSlides from './introSlides';
-import introPosi from '../images/introPosi.png'
+import introPosi from '../images/introPosi.png';
+import appSlides from './appSlides';
 
 const Introduction = ({ navigation }) => {
 
@@ -28,7 +28,7 @@ const Introduction = ({ navigation }) => {
         Speech.stop();
     };
 
-    const slides = introSlides;
+    const slides = appSlides.introSlides;
 
     const [modalVisible, setModalVisible] = useState(false);
 
@@ -54,7 +54,7 @@ const Introduction = ({ navigation }) => {
     }, [setCurrentSlide])
 
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
             <Modal
                 animationType="fade"
                 transparent={true}
@@ -140,7 +140,7 @@ const Introduction = ({ navigation }) => {
                 </Swiper>
 
             </ImageBackground>
-        </SafeAreaView>
+        </View>
     )
 };
 
