@@ -1,11 +1,16 @@
 {
   "expo": {
+    "scheme": "fromSneakersAndJeans",
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/images/icon.png"
+    },
     "name": "From Sneakers and Jeans",
     "slug": "PinkPosGirls",
-    "version": "1.0.2",
-    "icon": "./images/icon.png",
+    "version": "1.0.7",
+    "icon": "./assets/images/icon.png",
     "splash": {
-      "image": "./images/splash.png",
+      "image": "./assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -16,6 +21,12 @@
       "eas": {
         "projectId": "997d2312-d3dd-499b-8b58-0b5ef4da1d65"
       }
+    },
+    "android": {
+      "package": "com.bootupdesigner.PinkPosGirls"
+    },
+    "ios": {
+      "bundleIdentifier": "com.bootupdesigner.PinkPosGirls"
     }
   }
 }
