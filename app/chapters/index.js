@@ -2,7 +2,7 @@ import { View, Image, ImageBackground, TouchableOpacity, Text, StyleSheet } from
 import React from 'react';
 import * as ScreenOrientation from 'expo-screen-orientation'
 import { StatusBar } from 'expo-status-bar';
-import { useRouter } from "expo-router";
+import { useRouter, Link } from "expo-router";
 
 import Swiper from 'react-native-web-swiper';
 import * as Speech from 'expo-speech';
@@ -149,6 +149,9 @@ const chapters = () => {
                     )
                 })}
             </Swiper>
+            <View style={{flexDirection:"row", marginHorizontal:15, marginBottom:10}}>
+                <Link style={styles.paragraph} href="/privacypolicy">Privacy Policy</Link>
+            </View>
         </ImageBackground>
                 </View >
             ) : (

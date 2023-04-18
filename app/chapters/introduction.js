@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, SafeAreaView, StyleSheet, ScrollView, ImageBackground, Image, Modal, Pressable, StatusBar } from 'react-native';
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'expo-router';
+import { useRouter, Link } from 'expo-router';
 import Swiper from 'react-native-web-swiper';
 import * as Speech from 'expo-speech';
 
@@ -38,13 +38,13 @@ const introduction = () => {
     const updateModal = () => {
         return (
             <SafeAreaView>
-                    <Pressable
-                        style={[styles.button, styles.buttonClose]}
-                        onPress={() => setModalVisible(!modalVisible)}
-                    >
-                        <Text style={{textAlign:"center"}}>&#120; close</Text>
-                    </Pressable>
-                    <Image source={currentSlide.pinkPosi} style={styles.posiAffirm} accessibilityLabel='Pink Posi Affiramation' />
+                <Pressable
+                    style={[styles.button, styles.buttonClose]}
+                    onPress={() => setModalVisible(!modalVisible)}
+                >
+                    <Text style={{ textAlign: "center" }}>&#120; close</Text>
+                </Pressable>
+                <Image source={currentSlide.pinkPosi} style={styles.posiAffirm} accessibilityLabel='Pink Posi Affiramation' />
             </SafeAreaView>
         )
     }
@@ -71,7 +71,8 @@ const introduction = () => {
                 {/* page header and navigation */}
                 <View style={styles.header}>
                     <TouchableOpacity onPress={() => {
-                            router.push(href='/chapters')}} >
+                        router.push(href = '/chapters')
+                    }} >
                         <Image style={styles.navImages} source={Back} accessibilityLabel='visit next chapter' />
                     </TouchableOpacity>
 
@@ -79,7 +80,7 @@ const introduction = () => {
                         <Image key={index} style={styles.titleImages} source={slide.titleImage} accessibilityLabel={slide.chapterTitleAlt} />
                     ))}
 
-                    <TouchableOpacity onPress={() => router.push(href="/chapters/selfworth")} >
+                    <TouchableOpacity onPress={() => router.push(href = "/chapters/selfworth")} >
                         <Image style={styles.navImages} source={Next} accessibilityLabel='visit next chapter' />
                     </TouchableOpacity>
 
@@ -139,7 +140,9 @@ const introduction = () => {
                         )
                     })}
                 </Swiper>
-
+                <View style={{ flexDirection: "row", marginHorizontal: 15, marginBottom: 10 }}>
+                    <Link style={styles.paragraph} href="/privacypolicy">Privacy Policy</Link>
+                </View>
             </ImageBackground>
         </View>
     )

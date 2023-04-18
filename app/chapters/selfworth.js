@@ -6,7 +6,7 @@ import { Table, Row, Rows } from 'react-native-table-component';
 import Swiper from 'react-native-web-swiper';
 import * as Speech from 'expo-speech';
 import RadioForm from 'react-native-simple-radio-button';
-import { useRouter } from 'expo-router';
+import { useRouter, Link } from 'expo-router';
 
 import backgroundImage from '../../assets/images/sneakers_app_background.jpg';
 import Next from '../../assets/images/nextButton.png';
@@ -215,6 +215,9 @@ const selfworth = () => {
                         )
                     })}
                 </Swiper>
+                <View style={{ flexDirection: "row", marginHorizontal: 15, marginBottom: 10 }}>
+                    <Link style={styles.paragraph} href="/privacypolicy">Privacy Policy</Link>
+                </View>
             </ImageBackground>
         </View >
     )
@@ -264,10 +267,6 @@ const styles = ({
         width: 24,
         height: 24
     },
-    row: {
-        flexDirection: 'row',
-        width: '80%'
-    },
     bold: {
         fontSize: 16,
         fontWeight: 'bold',
@@ -278,6 +277,10 @@ const styles = ({
         textDecorationLine: 'underline',
         fontSize: 16,
         fontWeight: 'bold'
+    },
+    row: {
+        flexDirection: 'row',
+        width: '80%'
     },
     list: {
         flexDirection: 'row',

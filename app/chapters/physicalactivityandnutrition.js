@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, FlatList, Pressable, ImageBackground, Modal, Image } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useRouter, Link } from 'expo-router';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Swiper from 'react-native-web-swiper';
@@ -198,7 +198,9 @@ const physicalactivityandnutrition = () => {
                     })}
 
                 </Swiper>
-
+                <View style={{ flexDirection: "row", marginHorizontal: 15, marginBottom: 10 }}>
+                    <Link style={styles.paragraph} href="/privacypolicy">Privacy Policy</Link>
+                </View>
             </ImageBackground>
         </View>
     )

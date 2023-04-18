@@ -1,6 +1,6 @@
 import { View, Text, Pressable, ScrollView, Modal, TouchableOpacity, StyleSheet, ImageBackground, Image } from 'react-native';
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'expo-router';
+import { useRouter, Link } from 'expo-router';
 
 import Swiper from 'react-native-web-swiper';
 import * as Speech from 'expo-speech';
@@ -192,7 +192,9 @@ const positude = () => {
                         )
                     })}
                 </Swiper>
-
+                <View style={{ flexDirection: "row", marginHorizontal: 15, marginBottom: 10 }}>
+                    <Link style={styles.paragraph} href="/privacypolicy">Privacy Policy</Link>
+                </View>
             </ImageBackground>
         </View>
     )
