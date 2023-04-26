@@ -1,4 +1,5 @@
-import { View, Image, ImageBackground, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { View, Image, ImageBackground, TouchableOpacity, Text } from 'react-native';
+import StyleSheet from 'react-native-media-query';
 import React from 'react';
 import * as ScreenOrientation from 'expo-screen-orientation'
 import { StatusBar } from 'expo-status-bar';
@@ -81,10 +82,9 @@ const chapters = () => {
     const RenderItem = ({ item }) => {
         return (
             <View style={styles.tourSlide}>
-
                 <StatusBar hidden={true} />
                 <Text style={styles.title}>{item.title}</Text>
-                <Image style={styles.tourImage} source={item.image} />
+                <Image style={styles.tourImage} dataSet={{ media: ids.tourImage}} source={item.image} />
                 <Text style={styles.text}>{item.text}</Text>
             </View>
         );
@@ -110,59 +110,59 @@ const chapters = () => {
                             <TouchableOpacity onPress={() => {
                                 router.push(href = '/hotlines')
                             }} >
-                            <Image style={styles.navImages} source={hotlinesButton} accessibilityLabel='visit informational hotlines' />
-                        </TouchableOpacity>
-
-                        <Image style={styles.titleImages} source={chapterTitle} accessibilityLabel={chapterTitleAlt} />
-
-                        <TouchableOpacity onPress={() => {
-                            router.push(href = '/websites')
-                        }} >
-                            <Image style={styles.navImages} source={websitesButton} accessibilityLabel='visit informational websites' />
-                        </TouchableOpacity>
-
-                </View>
-                        {/* end of page header and navigation */}
-
-            <Swiper showsPagination={false} showsButtons={true} loop={false}>
-
-                {slides.map((slide, id) => {
-                    return (
-                        <View key={id} style={styles.content}>
-                            <View style={styles.left}>
-                                <Image style={styles.image} source={slide.thumbnail} accessibilityLabel={slide.thumbnail_alt} />
-                            </View>
-
-                            <TouchableOpacity style={styles.center} onPress={() => router.push({pathname: slide.page})} >
-                                <Text style={styles.h1}>Chapter {slide.id}</Text>
-                                <Image style={styles.descriptionTitle} source={slide.title} accessibilityLabel={slide.chapterTitleAlt} />
-                                <Text style={styles.paragraph}>{slide.description}</Text>
+                                <Image style={styles.navImages} source={hotlinesButton} accessibilityLabel='visit informational hotlines' />
                             </TouchableOpacity>
 
-                            <View style={styles.right}>
-                                <TouchableOpacity style={styles.listen} onPress={stopPlay}>
-                                    <Image style={styles.playOptions} source={stopButton} accessibilityLabel='stop button' />
-                                </TouchableOpacity>
+                            <Image style={styles.titleImages} source={chapterTitle} accessibilityLabel={chapterTitleAlt} />
 
-                            </View>
+                            <TouchableOpacity onPress={() => {
+                                router.push(href = '/websites')
+                            }} >
+                                <Image style={styles.navImages} source={websitesButton} accessibilityLabel='visit informational websites' />
+                            </TouchableOpacity>
+
                         </View>
-                    )
-                })}
-            </Swiper>
-            <View style={{flexDirection:"row", marginHorizontal:15, marginBottom:10}}>
-                <Link style={styles.paragraph} href="/privacypolicy">Privacy Policy</Link>
-            </View>
-        </ImageBackground>
+                        {/* end of page header and navigation */}
+
+                        <Swiper showsPagination={false} showsButtons={true} loop={false}>
+
+                            {slides.map((slide, id) => {
+                                return (
+                                    <View key={id} style={styles.content}>
+                                        <View style={styles.left}>
+                                            <Image style={styles.image} source={slide.thumbnail} accessibilityLabel={slide.thumbnail_alt} />
+                                        </View>
+
+                                        <TouchableOpacity style={styles.center} onPress={() => router.push({ pathname: slide.page })} >
+                                            <Text style={styles.h1}>Chapter {slide.id}</Text>
+                                            <Image style={styles.descriptionTitle} source={slide.title} accessibilityLabel={slide.chapterTitleAlt} />
+                                            <Text style={styles.paragraph}>{slide.description}</Text>
+                                        </TouchableOpacity>
+
+                                        <View style={styles.right}>
+                                            <TouchableOpacity style={styles.listen} onPress={stopPlay}>
+                                                <Image style={styles.playOptions} source={stopButton} accessibilityLabel='stop button' />
+                                            </TouchableOpacity>
+
+                                        </View>
+                                    </View>
+                                )
+                            })}
+                        </Swiper>
+                        <View style={{ flexDirection: "row", marginHorizontal: 15, marginBottom: 10 }}>
+                            <Link style={styles.paragraph} href="/privacypolicy">Privacy Policy</Link>
+                        </View>
+                    </ImageBackground>
                 </View >
             ) : (
-    <AppIntroSlider style={{ backgroundColor: '#ff0099' }} data={tourSlides} renderItem={RenderItem} onDone={onDone} showSkipButton={true} onSkip={onSkip} />
-)}
+                <AppIntroSlider style={{ backgroundColor: '#ff0099' }} data={tourSlides} renderItem={RenderItem} onDone={onDone} showSkipButton={true} onSkip={onSkip} />
+            )}
         </>
     )
 };
 
 
-const styles = StyleSheet.create({
+const { ids, styles } = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -248,14 +248,25 @@ const styles = StyleSheet.create({
     },
     tourSlide: {
         flex: 1,
-        height: '100%',
         alignItems: 'center',
-
+        justifyContent: 'center',
+        alignContent: 'center',
     },
     tourImage: {
         resizeMode: 'contain',
-        height: 220,
-        width: '100%'
+        marginVertical: 5,
+        '@media (min-height: 320px) and (max-height: 480px)':{
+            height: 220,
+            width: '100%',
+        },
+        '@media (min-height: 481px) and (max-height: 768px)':{
+            height: 500,
+            width: '100%',
+        },
+        '@media (min-height: 769px) and (max-height: 1024px)':{
+            height: 600,
+            width: '100%',
+        }
     },
     title: {
         fontWeight: 'bold',
@@ -263,7 +274,8 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         textShadowColor: "#000000",
         textShadowOffset: { width: 2, height: 2 },
-        textShadowRadius: 2
+        textShadowRadius: 2,
+        marginVertical: 5,
     },
     text: {
         flex: 1,
@@ -273,7 +285,8 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         textShadowColor: "#000000",
         textShadowOffset: { width: 2, height: 2 },
-        textShadowRadius: 2
+        textShadowRadius: 2,
+        marginVertical: 5
     }
 });
 

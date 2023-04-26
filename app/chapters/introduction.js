@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, SafeAreaView, StyleSheet, ScrollView, ImageBackground, Image, Modal, Pressable, StatusBar } from 'react-native';
 import React, { useState, useEffect } from 'react';
-import { useRouter, Link } from 'expo-router';
+import { useRouter } from 'expo-router';
 import Swiper from 'react-native-web-swiper';
 import * as Speech from 'expo-speech';
 
@@ -37,15 +37,15 @@ const introduction = () => {
 
     const updateModal = () => {
         return (
-            <SafeAreaView>
+            <View>
                 <Pressable
-                    style={[styles.button, styles.buttonClose]}
                     onPress={() => setModalVisible(!modalVisible)}
                 >
-                    <Text style={{ textAlign: "center" }}>&#120; close</Text>
+                    <Text style={styles.bold}>&#120; close</Text>
+                    <Image source={currentSlide.pinkPosi} style={styles.posiAffirm} accessibilityLabel='pink posi affirmation' />
+
                 </Pressable>
-                <Image source={currentSlide.pinkPosi} style={styles.posiAffirm} accessibilityLabel='Pink Posi Affiramation' />
-            </SafeAreaView>
+            </View>
         )
     }
 
@@ -58,7 +58,8 @@ const introduction = () => {
             <Modal
                 animationType="fade"
                 transparent={true}
-                visible={modalVisible}>
+                visible={modalVisible}
+                supportedOrientations={["landscape"]}>
 
                 <View style={styles.modalView}>
                     {updateModal()}
@@ -140,9 +141,6 @@ const introduction = () => {
                         )
                     })}
                 </Swiper>
-                <View style={{ flexDirection: "row", marginHorizontal: 15, marginBottom: 10 }}>
-                    <Link style={styles.paragraph} href="/privacypolicy">Privacy Policy</Link>
-                </View>
             </ImageBackground>
         </View>
     )
@@ -153,12 +151,6 @@ const styles = ({
         flex: 1,
         justifyContent: 'center',
         marginHorizontal: 0
-    },
-    centeredView: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 22
     },
     backgroundImage: {
         resizeMode: 'cover',
@@ -183,6 +175,12 @@ const styles = ({
     paragraph: {
         fontSize: 16,
         marginVertical: 2,
+    },
+    bold: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginTop: 0,
+        marginBottom: 2
     },
     boldCenter: {
         fontSize: 16,
@@ -232,6 +230,7 @@ const styles = ({
     posiAffirm: {
         flex: 1,
         height: '100%',
+        width: 600,
         resizeMode: 'contain'
     },
     modalView: {

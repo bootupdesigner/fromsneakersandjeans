@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, FlatList, Pressable, ImageBackground, Modal, Image } from 'react-native';
-import { useRouter, Link } from 'expo-router';
+import { useRouter } from 'expo-router';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Swiper from 'react-native-web-swiper';
@@ -41,14 +41,15 @@ const physicalactivityandnutrition = () => {
 
     const updateModal = () => {
         return (
-            <ImageBackground source={currentSlide.pinkPosi} style={styles.posiAffirm} accessibilityLabel='visit next chapter'>
-
+            <View>
                 <Pressable
                     onPress={() => setModalVisible(!modalVisible)}
                 >
                     <Text style={styles.bold}>&#120; close</Text>
+                    <Image source={currentSlide.pinkPosi} style={styles.posiAffirm} accessibilityLabel='pink posi affirmation' />
+
                 </Pressable>
-            </ImageBackground>
+            </View>
         )
     }
 
@@ -61,7 +62,8 @@ const physicalactivityandnutrition = () => {
         <Modal
             animationType="fade"
             transparent={true}
-            visible={modalVisible}>
+            visible={modalVisible}
+            supportedOrientations={["landscape"]}>
 
             <View style={styles.modalView}>
                 {updateModal()}
@@ -198,9 +200,6 @@ const physicalactivityandnutrition = () => {
                     })}
 
                 </Swiper>
-                <View style={{ flexDirection: "row", marginHorizontal: 15, marginBottom: 10 }}>
-                    <Link style={styles.paragraph} href="/privacypolicy">Privacy Policy</Link>
-                </View>
             </ImageBackground>
         </View>
     )
@@ -230,7 +229,8 @@ const styles = StyleSheet.create({
     titleImages: {
         height: 80,
         width: '50%',
-        backgroundColor: 'rgba(255,255,255,0)'
+        backgroundColor: 'rgba(255,255,255,0)',
+        marginVertical:5
     },
     paragraph: {
         fontSize: 16,
@@ -289,7 +289,7 @@ const styles = StyleSheet.create({
     posiAffirm: {
         flex: 1,
         height: '100%',
-        width:'80%',
+        width:600,
         resizeMode: 'contain'
     },
     modalView: {
@@ -310,9 +310,8 @@ const styles = StyleSheet.create({
         width: '30%'
     },
     center: {
-        flex: 1,
         width: '50%',
-        height: '100%'
+        justifyContent: 'center'
     },
     right: {
         alignItems: 'center',
@@ -321,7 +320,7 @@ const styles = StyleSheet.create({
     content: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
         alignContent: 'center',
         marginBottom:35

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, RadioButtonGroup, TouchableOpacity, StyleSheet, FlatList, Pressable, ImageBackground, Modal, Image, TextInput } from 'react-native';
+import { View, Text, ScrollView, Platform, TouchableOpacity, StyleSheet, FlatList, Pressable, ImageBackground, Modal, Image, TextInput } from 'react-native';
 
 import { DataTable } from 'react-native-paper';
-import { Table, Row, Rows } from 'react-native-table-component';
 import Swiper from 'react-native-web-swiper';
 import * as Speech from 'expo-speech';
 import RadioForm from 'react-native-simple-radio-button';
-import { useRouter, Link } from 'expo-router';
+import { useRouter } from 'expo-router';
 
 import backgroundImage from '../../assets/images/sneakers_app_background.jpg';
 import Next from '../../assets/images/nextButton.png';
@@ -68,14 +67,15 @@ const selfworth = () => {
 
     const updateModal = () => {
         return (
-            <ImageBackground source={currentSlide.pinkPosi} style={styles.posiAffirm} accessibilityLabel='visit next chapter'>
-
+            <View>
                 <Pressable
                     onPress={() => setModalVisible(!modalVisible)}
                 >
                     <Text style={styles.bold}>&#120; close</Text>
+                    <Image source={currentSlide.pinkPosi} style={styles.posiAffirm} accessibilityLabel='pink posi affirmation' />
+
                 </Pressable>
-            </ImageBackground>
+            </View>
         )
     }
 
@@ -92,7 +92,8 @@ const selfworth = () => {
             <Modal
                 animationType="fade"
                 transparent={true}
-                visible={modalVisible}>
+                visible={modalVisible}
+                supportedOrientations={["landscape"]}>
 
                 <View style={styles.modalView}>
                     {updateModal()}
@@ -177,10 +178,6 @@ const selfworth = () => {
                                                                 <TextInput style={{ width: '20%' }} placeholder='1-5' keyboardType='numeric' />
                                                             </View>
                                                         ))}
-                                                        <View key={index} style={{ flexDirection: 'row', borderBottomWidth: 1, borderStyle: 'solid' }}>
-                                                            <Text style={{ width: '80%', borderRightWidth: 1, paddingHorizontal: 3 }}>{table.tableFooter}</Text>
-                                                            <TextInput style={{ width: '20%' }} placeholder='1-50' keyboardType='numeric' />
-                                                        </View>
                                                     </View>
                                                 ))}
                                             </View> : null}
@@ -215,9 +212,6 @@ const selfworth = () => {
                         )
                     })}
                 </Swiper>
-                <View style={{ flexDirection: "row", marginHorizontal: 15, marginBottom: 10 }}>
-                    <Link style={styles.paragraph} href="/privacypolicy">Privacy Policy</Link>
-                </View>
             </ImageBackground>
         </View >
     )
@@ -305,7 +299,7 @@ const styles = ({
     posiAffirm: {
         flex: 1,
         height: '100%',
-        width: '80%',
+        width: 600,
         resizeMode: 'contain'
     },
     modalView: {

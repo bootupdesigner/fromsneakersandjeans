@@ -122,6 +122,7 @@ const websites = () => {
                             </TouchableOpacity>
                         </View>
                     </View>
+
                 </Swiper>
                 <View style={{ flexDirection: "row", marginHorizontal: 15, marginBottom: 10 }}>
                     <Link style={styles.paragraph} href="/privacypolicy">Privacy Policy</Link>

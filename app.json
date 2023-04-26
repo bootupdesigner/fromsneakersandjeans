@@ -3,7 +3,7 @@
     "scheme": "fromSneakersAndJeans",
     "web": {
       "bundler": "metro",
-      "favicon": "./assets/images/icon.png"
+      "icon": "./assets/images/icon.png"
     },
     "name": "From Sneakers and Jeans",
     "slug": "PinkPosGirls",
