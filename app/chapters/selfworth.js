@@ -11,12 +11,13 @@ import backgroundImage from '../../assets/images/sneakers_app_background.jpg';
 import Next from '../../assets/images/nextButton.png';
 import Back from '../../assets/images/backButton.png';
 import playButton from '../../assets/images/playButton.png';
-import stopButton from '../../assets/images/stopButton.png';
 import Thumbnail from '../../assets/images/chapter-2-thumbnail.png'
 import pinkPosiImage from '../../assets/images/pinkPosi.png'
 import chapterTitle from '../../assets/images/chapter-2-title.png'
 
 import appSlides from '../../assets/slides/appSlides';
+
+import StopPlay from '../../assets/stopPlay';
 
 const selfworth = () => {
     const router = useRouter();
@@ -53,10 +54,6 @@ const selfworth = () => {
     const speakText = (text) => {
         const firstSlide = (text);
         Speech.speak(firstSlide);
-    };
-
-    const stopPlay = () => {
-        Speech.stop();
     };
 
     const [modalVisible, setModalVisible] = useState(false);
@@ -175,7 +172,7 @@ const selfworth = () => {
                                                         {table.tableData.map((question, index) => (
                                                             <View key={index} style={{ flexDirection: 'row', borderBottomWidth: 1, borderStyle: 'solid' }}>
                                                                 <Text style={{ width: '80%', borderRightWidth: 1, paddingHorizontal: 3 }}>{question}</Text>
-                                                                <TextInput style={{ width: '20%' }} placeholder='1-5' keyboardType='numeric' />
+                                                                <TextInput style={{ width: '20%' }} placeholder='1-5' keyboardType='numeric' returnKeyType='done'/>
                                                             </View>
                                                         ))}
                                                     </View>
@@ -199,9 +196,7 @@ const selfworth = () => {
                                 </View>
 
                                 <View style={styles.right}>
-                                    <TouchableOpacity style={styles.listen} onPress={stopPlay}>
-                                        <Image style={styles.playOptions} source={stopButton} accessibilityLabel='stop button' />
-                                    </TouchableOpacity>
+                                    <StopPlay/>
                                     {slide.pinkPosi ?
                                         <Pressable onPress={() => setModalVisible(true)}>
                                             <Image style={styles.navImages} source={pinkPosiImage} accessibilityLabel='visit next chapter' />

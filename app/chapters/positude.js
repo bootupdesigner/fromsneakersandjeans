@@ -9,12 +9,13 @@ import backgroundImage from '../../assets/images/sneakers_app_background.jpg';
 import Next from '../../assets/images/nextButton.png';
 import Back from '../../assets/images/backButton.png';
 import playButton from '../../assets/images/playButton.png';
-import stopButton from '../../assets/images/stopButton.png';
 import chapterTitle from '../../assets/images/chapter-3-title.png'
 import pinkPosiImage from '../../assets/images/pinkPosi.png'
 import Thumbnail from '../../assets/images/chapter-3-thumbnail.png';
 
 import appSlides from '../../assets/slides/appSlides';
+
+import StopPlay from '../../assets/stopPlay';
 
 const positude = () => {
     const chapterTitleAlt = 'positude chapter';
@@ -182,9 +183,7 @@ const positude = () => {
                                 </View>
 
                                 <View style={styles.right}>
-                                    <TouchableOpacity style={styles.listen} onPress={stopPlay}>
-                                        <Image style={styles.playOptions} source={stopButton} accessibilityLabel='play button' />
-                                    </TouchableOpacity>
+                                    <StopPlay/>
                                     {slide.pinkPosi ?
                                         <Pressable onPress={() => setModalVisible(true)}>
                                             <Image style={styles.navImages} source={pinkPosiImage} accessibilityLabel='visit next chapter' />

@@ -14,6 +14,8 @@ import chapterTitle from '../../assets/images/chapter-4-title.png'
 import pinkPosiImage from '../../assets/images/pinkPosi.png'
 import appSlides from '../../assets/slides/appSlides';
 
+import StopPlay from '../../assets/stopPlay';
+
 const etiquette = () => {
     const chapterTitleAlt = 'etiquette chapter';
 
@@ -22,10 +24,6 @@ const etiquette = () => {
     const speakText = (text) => {
         const firstSlide = (text);
         Speech.speak(firstSlide);
-    };
-
-    const stopPlay = () => {
-        Speech.stop();
     };
 
     const slides = appSlides.etiquetteSlides;
@@ -176,9 +174,7 @@ const etiquette = () => {
                                 </View>
 
                                 <View style={styles.right}>
-                                    <TouchableOpacity style={styles.listen} onPress={stopPlay}>
-                                        <Image style={styles.playOptions} source={stopButton} accessibilityLabel='stop button' />
-                                    </TouchableOpacity>
+                                    <TStopPlay/>
                                     {slide.pinkPosi ?
                                         <Pressable onPress={() => setModalVisible(true)}>
                                             <Image style={styles.navImages} source={pinkPosiImage} accessibilityLabel='visit next chapter' />

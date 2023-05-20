@@ -6,23 +6,17 @@ import Swiper from 'react-native-web-swiper';
 import * as Speech from 'expo-speech';
 
 import backgroundImage from '../../assets/images/sneakers_app_background.jpg';
-import hotlinesButton from '../../assets/images/hotlines.png';
+import referenceButton from '../../assets/images/references.png';
 import chapterTitle from '../../assets/images/privacyTitle.png';
 import backButton from '../../assets/images/backButton.png';
 import privacyThumbnail from '../../assets/images/icon.png';
-import stopButton from '../../assets/images/stopButton.png';
 
+import StopPlay from '../../assets/stopPlay';
 
 const privacypolicy = () => {
     const chapterTitleAlt = 'websites title';
 
     const router = useRouter();
-
-
-
-    const stopPlay = () => {
-        Speech.stop();
-    };
 
     return (
         <View style={styles.container}>
@@ -39,9 +33,9 @@ const privacypolicy = () => {
                     <Image style={styles.titleImages} source={chapterTitle} accessibilityLabel={chapterTitleAlt} />
 
                     <TouchableOpacity onPress={() => {
-                        router.push(href = '/hotlines')
+                        router.push(href = '/references')
                     }} >
-                        <Image style={styles.navImages} source={hotlinesButton} accessibilityLabel='visit informational hotlines' />
+                        <Image style={styles.navImages} source={referenceButton} accessibilityLabel='visit references and citations page' />
                     </TouchableOpacity>
 
                 </View>
@@ -297,9 +291,9 @@ const privacypolicy = () => {
                                     <Text style={styles.boldUnderline}>Security</Text>
                                     <Text style={styles.paragraph}>Notary Works takes precautions to protect your information. When you submit sensitive information via the website or app, your information is protected both online and offline. Wherever we collect sensitive information (e.g. credit card information), that information is encrypted and transmitted to us in a secure way. You can verify this by looking for a lock icon in the address bar and looking for &quot;https&quot; at the beginning of the address of the webpage.</Text>
                                     <Text style={styles.paragraph}>
-                                    While we use encryption to protect sensitive information transmitted online, we also protect your information offline. Only employees who need the information to perform a specific job (for example, billing or customer service) are granted access to personally identifiable information. The computers and servers in which we store personally identifiable information are kept in a secure environment. This is all done to prevent any loss, misuse, unauthorized access, disclosure or modification of the user&#39;s personal information under our control.</Text>
+                                        While we use encryption to protect sensitive information transmitted online, we also protect your information offline. Only employees who need the information to perform a specific job (for example, billing or customer service) are granted access to personally identifiable information. The computers and servers in which we store personally identifiable information are kept in a secure environment. This is all done to prevent any loss, misuse, unauthorized access, disclosure or modification of the user&#39;s personal information under our control.</Text>
                                     <Text style={styles.paragraph}>
-                                    The company also uses Secure Socket Layer (SSL) for authentication and private communications to build users&#39; trust and confidence in the internet and website use by providing simple and secure access and communication of credit card and personal information.</Text>
+                                        The company also uses Secure Socket Layer (SSL) for authentication and private communications to build users&#39; trust and confidence in the internet and website use by providing simple and secure access and communication of credit card and personal information.</Text>
 
                                     <Text style={styles.boldUnderline}>Acceptance of Terms</Text>
                                     <Text style={styles.paragraph}>By using this website or app, you are hereby accepting the terms and conditions stipulated within the Privacy Policy Agreement. If you are not in agreement with our terms and conditions, then you should refrain from further use of our sites. In addition, your continued use of our website or app following the posting of any updates or changes to our terms and conditions shall mean that you agree and acceptance of such changes.</Text>
@@ -318,13 +312,15 @@ const privacypolicy = () => {
                         </View>
 
                         <View style={styles.right}>
-                            <TouchableOpacity style={styles.listen} onPress={stopPlay}>
-                                <Image style={styles.playOptions} source={stopButton} accessibilityLabel='stop button' />
-                            </TouchableOpacity>
+                            <StopPlay />
                         </View>
                     </View>
 
                 </Swiper>
+
+                <View style={{ flexDirection: "row", marginHorizontal: 15, marginBottom: 10 }}>
+                    <Link style={styles.paragraph} href="/information">Information</Link>
+                </View>
 
             </ImageBackground>
         </View>

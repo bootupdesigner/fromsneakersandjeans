@@ -1,20 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, FlatList, Pressable, ImageBackground, Modal, Image } from 'react-native';
-import { useRouter } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import { Table, Row, Rows } from 'react-native-table-component';
 import Swiper from 'react-native-web-swiper';
 import * as Speech from 'expo-speech';
+import { Divider } from 'react-native-paper';
 
 import backgroundImage from '../../assets/images/sneakers_app_background.jpg';
 import Next from '../../assets/images/nextButton.png';
 import Back from '../../assets/images/backButton.png';
 import playButton from '../../assets/images/playButton.png';
-import stopButton from '../../assets/images/stopButton.png';
 import chapterTitle from '../../assets/images/chapter-5-title.png';
 import pinkPosiImage from '../../assets/images/pinkPosi.png';
 import appSlides from '../../assets/slides/appSlides';
 
+import StopPlay from '../../assets/stopPlay';
+
 const healthandhygiene = () => {
+    function reference(slideHeading) {
+        console.log(slideHeading);
+        const refKey = '\u00b9';
+        const slideWithReference = slides.find((slide) => slide.body && slide.body.includes(refKey));
+      
+        if (!slideWithReference) {
+          return slideHeading;
+        }
+      
+        const referenceRegex = new RegExp(`${refKey}\\s*(.*?)\\s*$`);
+        const match = slideWithReference.body.match(referenceRegex);
+      
+        if (!match) {
+          return slideHeading;
+        }
+      
+        const referenceText = match[1];
+        const referenceUrl = '/references';
+      
+        console.log('Reference Text:', referenceText);
+        console.log('Reference URL:', referenceUrl);
+      
+        return referenceText;
+      }
+      
     const chapterTitleAlt = 'health and hygiene chapter';
 
     const router = useRouter();
@@ -22,10 +49,6 @@ const healthandhygiene = () => {
     const speakText = (text) => {
         const firstSlide = (text);
         Speech.speak(firstSlide);
-    };
-
-    const stopPlay = () => {
-        Speech.stop();
     };
 
     const slides = appSlides.healthAndHygiene;
@@ -104,7 +127,7 @@ const healthandhygiene = () => {
                                             </View>
                                         )) : null}
 
-                                        {slide.heading ? <Text style={styles.boldUnderline}>{slide.heading}</Text> : null}
+                                        {slide.heading ? <Text style={styles.boldUnderline}>{reference()}</Text> : null}
 
                                         {slide.bullets ? slide.bullets.map((point, id) => {
                                             return (
@@ -187,9 +210,7 @@ const healthandhygiene = () => {
                                                         {point.bulletPoints ?
                                                             point.bulletPoints.map((paragraph, index) => (
                                                                 <View style={styles.row} key={index}>
-                                                                    <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
-                                                                        <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
-                                                                    </TouchableOpacity>
+                                                                  <StopPlay/>
                                                                     <View style={styles.list} key={index}>
                                                                         <Text style={styles.indentBullet}>{'\u2022'}</Text>
                                                                         <Text style={styles.listData}>{paragraph}</Text>
@@ -211,7 +232,17 @@ const healthandhygiene = () => {
                                                     <Text style={styles.paragraph}>{paragraph}</Text>
                                                 </View>
                                             )) : null}
-
+                                        {slide.reference ?
+                                            slide.reference.map((ref, id) => (
+                                                <View key={id}>
+                                                    <View>
+                                                        < Divider style={{ height: 2 }} />
+                                                    </View>
+                                                    <View>
+                                                        <Link href='/references' style={styles.ref}>{ref.id}. {ref.cite}</Link>
+                                                    </View>
+                                                </View>
+                                            )) : null}
                                     </ScrollView>
                                 </View>
 
@@ -263,6 +294,11 @@ const styles = StyleSheet.create({
     paragraph: {
         fontSize: 16,
         marginVertical: 2,
+    },
+    ref: {
+        fontSize: 12,
+        fontStyle: 'italic',
+        color: 'blue'
     },
     bold: {
         fontSize: 16,
@@ -361,7 +397,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         alignContent: 'center',
-        marginBottom:35
+        marginBottom: 35
     },
 });
 

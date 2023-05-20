@@ -15,6 +15,8 @@ import pinkPosiImage from '../../assets/images/pinkPosi.png'
 import introPosi from '../../assets/images/introPosi.png';
 import appSlides from '../../assets/slides/appSlides';
 
+import StopPlay from '../../assets/stopPlay';
+
 const introduction = () => {
 
     const router = useRouter();
@@ -22,10 +24,6 @@ const introduction = () => {
     const speakText = (text) => {
         const firstSlide = (text);
         Speech.speak(firstSlide);
-    };
-
-    const stopPlay = () => {
-        Speech.stop();
     };
 
     const slides = appSlides.introSlides;
@@ -129,9 +127,7 @@ const introduction = () => {
                                 </View>
 
                                 <View style={styles.right}>
-                                    <TouchableOpacity style={styles.listen} onPress={stopPlay}>
-                                        <Image style={styles.playOptions} source={stopButton} accessibilityLabel='stop button' />
-                                    </TouchableOpacity>
+                                    <StopPlay/>
 
                                     <Pressable onPress={() => setModalVisible(true)}>
                                         <Image style={styles.navImages} source={pinkPosiImage} accessibilityLabel='visit next chapter' />

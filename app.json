@@ -3,11 +3,12 @@
     "scheme": "fromSneakersAndJeans",
     "web": {
       "bundler": "metro",
-      "icon": "./assets/images/icon.png"
+      "faviicon": "./assets/images/icon.png"
     },
     "name": "From Sneakers and Jeans",
     "slug": "PinkPosGirls",
-    "version": "1.0.7",
+    "version": "1.0.9",
+    "orientation": "landscape",
     "icon": "./assets/images/icon.png",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -27,6 +28,14 @@
     },
     "ios": {
       "bundleIdentifier": "com.bootupdesigner.PinkPosGirls"
-    }
+    },
+    "plugins": [
+      [
+        "expo-screen-orientation",
+        {
+          "initialOrientation": "LANDSCAPE_LEFT"
+        }
+      ]
+    ]
   }
 }

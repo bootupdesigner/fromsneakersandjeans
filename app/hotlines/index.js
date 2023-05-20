@@ -12,7 +12,8 @@ import websitesButton from '../../assets/images/websites.png';
 import chapterTitle from '../../assets/images/hotlinesTitle.png';
 import backButton from '../../assets/images/backButton.png';
 import hotlinesThumbnail from '../../assets/images/hotlinesThumbnail.png';
-import stopButton from '../../assets/images/stopButton.png';
+
+import StopPlay from '../../assets/stopPlay';
 
 import hotlineSlides from '../../assets/slides/hotlineSlides';
 
@@ -22,10 +23,6 @@ const hotlines = () => {
     const router = useRouter();
 
     const slides = hotlineSlides;
-
-    const stopPlay = () => {
-        Speech.stop();
-    };
 
     const popover1 = () => {
         const firstSlide = (hotlines[1].notes);
@@ -37,15 +34,17 @@ const hotlines = () => {
 
                 {/* page header and navigation */}
                 <View style={styles.header}>
-                        <TouchableOpacity onPress={() => {
-                            router.push(href='/chapters')}}>
-                            <Image style={styles.navImages} source={backButton} accessibilityLabel='visit next chapter' />
-                        </TouchableOpacity>
+                    <TouchableOpacity onPress={() => {
+                        router.push(href = '/chapters')
+                    }}>
+                        <Image style={styles.navImages} source={backButton} accessibilityLabel='visit next chapter' />
+                    </TouchableOpacity>
 
                     <Image style={styles.titleImages} source={chapterTitle} accessibilityLabel={chapterTitleAlt} />
 
                     <TouchableOpacity onPress={() => {
-                            router.push(href='/websites')}} >
+                        router.push(href = '/websites')
+                    }} >
                         <Image style={styles.navImages} source={websitesButton} accessibilityLabel='visit informational websites' />
                     </TouchableOpacity>
 
@@ -94,11 +93,8 @@ const hotlines = () => {
                                                 null}
                                         </ScrollView>
                                     </View>
-
                                     <View style={styles.right}>
-                                        <TouchableOpacity style={styles.listen} onPress={stopPlay}>
-                                            <Image style={styles.playOptions} source={stopButton} accessibilityLabel='stop button' />
-                                        </TouchableOpacity>
+                                        <StopPlay />
                                     </View>
                                 </View>
                             </View>
@@ -106,7 +102,7 @@ const hotlines = () => {
                     })}
                 </Swiper>
                 <View style={{ flexDirection: "row", marginHorizontal: 15, marginBottom: 10 }}>
-                    <Link style={styles.paragraph} href="/privacypolicy">Privacy Policy</Link>
+                    <Link style={styles.paragraph} href="/information">Information</Link>
                 </View>
             </ImageBackground>
         </View >

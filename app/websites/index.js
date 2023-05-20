@@ -10,7 +10,8 @@ import hotlinesButton from '../../assets/images/hotlines.png';
 import chapterTitle from '../../assets/images/websitesTitle.png';
 import backButton from '../../assets/images/backButton.png';
 import websitesThumbnail from '../../assets/images/websitesThumbnail.png';
-import stopButton from '../../assets/images/stopButton.png';
+
+import StopPlay from '../../assets/stopPlay';
 
 
 const websites = () => {
@@ -63,10 +64,6 @@ const websites = () => {
         }
     ];
 
-    const stopPlay = () => {
-        Speech.stop();
-    };
-    
     const slides = websites;
 
     return (
@@ -75,15 +72,17 @@ const websites = () => {
 
                 {/* page header and navigation */}
                 <View style={styles.header}>
-                        <TouchableOpacity onPress={() => {
-                            router.push(href='/chapters')}}>
+                    <TouchableOpacity onPress={() => {
+                        router.push(href = '/chapters')
+                    }}>
                         <Image style={styles.navImages} source={backButton} accessibilityLabel='back to chapters' />
                     </TouchableOpacity>
 
                     <Image style={styles.titleImages} source={chapterTitle} accessibilityLabel={chapterTitleAlt} />
 
                     <TouchableOpacity onPress={() => {
-                            router.push(href='/hotlines')}} >
+                        router.push(href = '/hotlines')
+                    }} >
                         <Image style={styles.navImages} source={hotlinesButton} accessibilityLabel='visit informational hotlines' />
                     </TouchableOpacity>
 
@@ -117,15 +116,13 @@ const websites = () => {
                         </View>
 
                         <View style={styles.right}>
-                            <TouchableOpacity style={styles.listen} onPress={stopPlay}>
-                                <Image style={styles.playOptions} source={stopButton} accessibilityLabel='stop button' />
-                            </TouchableOpacity>
+                            <StopPlay />
                         </View>
                     </View>
 
                 </Swiper>
                 <View style={{ flexDirection: "row", marginHorizontal: 15, marginBottom: 10 }}>
-                    <Link style={styles.paragraph} href="/privacypolicy">Privacy Policy</Link>
+                    <Link style={styles.paragraph} href="/information">Information</Link>
                 </View>
             </ImageBackground>
         </View>
@@ -203,8 +200,8 @@ const styles = StyleSheet.create({
     },
     separator: {
         borderBottomColor: 'black',
-    borderBottomWidth: 2,
-    borderStyle:'solid'
+        borderBottomWidth: 2,
+        borderStyle: 'solid'
     }
 });
 

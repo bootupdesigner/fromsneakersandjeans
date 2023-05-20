@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, FlatList, Pressable, ImageBackground, Modal, Image } from 'react-native';
-import { useRouter } from 'expo-router';
 
+import { useRouter, Link } from 'expo-router';
+import { Divider } from 'react-native-paper';
 import Swiper from 'react-native-web-swiper';
 import * as Speech from 'expo-speech';
 
@@ -9,11 +10,12 @@ import backgroundImage from '../../assets/images/sneakers_app_background.jpg';
 import Next from '../../assets/images/nextButton.png';
 import Back from '../../assets/images/backButton.png';
 import playButton from '../../assets/images/playButton.png';
-import stopButton from '../../assets/images/stopButton.png';
 import pinkPosiImage from '../../assets/images/pinkPosi.png'
 import chapterTitle from '../../assets/images/chapter-9-title.png'
 
 import appSlides from '../../assets/slides/appSlides';
+
+import StopPlay from '../../assets/stopPlay';
 
 const safety = () => {
     const router = useRouter();
@@ -182,14 +184,23 @@ const safety = () => {
                                                     <Text key={index} style={styles.paragraph}>{paragraph}</Text>
                                                 </View>
                                             )) : null}
+                                            {slide.reference ?
+                                                slide.reference.map((ref, id) => (
+                                                    <View key={id}>
+                                                        <View>
+                                                            < Divider style={{height: 2}}/>
+                                                        </View>
+                                                        <View>
+                                                                <Link href='/references' style={styles.ref}>{ref.id}. {ref.cite}</Link>
+                                                        </View>
+                                                    </View>
+                                                )) : null}
 
                                     </ScrollView>
                                 </View>
 
                                 <View style={styles.right}>
-                                    <TouchableOpacity style={styles.listen} onPress={stopPlay}>
-                                        <Image style={styles.playOptions} source={stopButton} accessibilityLabel='stop button' />
-                                    </TouchableOpacity>
+                                    <StopPlay/>
                                     {slide.pinkPosi ?
                                         <Pressable onPress={() => setModalVisible(true)}>
                                             <Image style={styles.navImages} source={pinkPosiImage} accessibilityLabel='visit next chapter' />
@@ -216,6 +227,11 @@ const styles = StyleSheet.create(
             resizeMode: 'cover',
             height: '100%',
             width: '100%',
+        },
+        ref:{
+            fontSize: 12,
+            fontStyle:'italic',
+            color: 'blue'
         },
         header: {
             flexDirection: 'row',

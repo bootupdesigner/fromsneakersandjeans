@@ -11,7 +11,7 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 import { useState } from 'react';
 
 import backgroundImage from '../../assets/images/overlay_background.png';
-import stopButton from '../../assets/images/stopButton.png';
+import StopPlay from '../../assets/stopPlay';
 
 import chapterSlides from '../../assets/slides/chapterSlides';
 
@@ -83,17 +83,13 @@ const chapters = () => {
         return (
             <View style={styles.tourSlide}>
                 <StatusBar hidden={true} />
-                <Text style={styles.title}>{item.title}</Text>
-                <Image style={styles.tourImage} dataSet={{ media: ids.tourImage}} source={item.image} />
-                <Text style={styles.text}>{item.text}</Text>
+                <Text style={styles.title} dataSet={{ media: ids.title }}>{item.title}</Text>
+                <Image style={styles.tourImage} dataSet={{ media: ids.tourImage }} source={item.image} />
+                <Text style={styles.text} dataSet={{ media: ids.text }}>{item.text}</Text>
             </View>
         );
     };
     const chapterTitleAlt = 'chapters title';
-
-    const stopPlay = () => {
-        Speech.stop();
-    };
 
     const slides = chapterSlides;
 
@@ -140,17 +136,14 @@ const chapters = () => {
                                         </TouchableOpacity>
 
                                         <View style={styles.right}>
-                                            <TouchableOpacity style={styles.listen} onPress={stopPlay}>
-                                                <Image style={styles.playOptions} source={stopButton} accessibilityLabel='stop button' />
-                                            </TouchableOpacity>
-
+                                            <StopPlay />
                                         </View>
                                     </View>
                                 )
                             })}
                         </Swiper>
                         <View style={{ flexDirection: "row", marginHorizontal: 15, marginBottom: 10 }}>
-                            <Link style={styles.paragraph} href="/privacypolicy">Privacy Policy</Link>
+                            <Link style={styles.paragraph} href="/information">Information</Link>
                         </View>
                     </ImageBackground>
                 </View >
@@ -253,20 +246,32 @@ const { ids, styles } = StyleSheet.create({
         alignContent: 'center',
     },
     tourImage: {
-        resizeMode: 'contain',
         marginVertical: 5,
-        '@media (min-height: 320px) and (max-height: 480px)':{
-            height: 220,
-            width: '100%',
+        paddingVertical: 5,
+        height: 200,
+        width: 200,
+        resizeMode: 'contain',
+        '@media (orientation:portrait) and (max-width: 480px)': {
+            marginVertical: 5,
+            paddingVertical: 5,
+            height: 200,
+            width: 200,
+            resizeMode: 'contain',
         },
-        '@media (min-height: 481px) and (max-height: 768px)':{
-            height: 500,
-            width: '100%',
+        '@media (min-height: 481px) and (max-height: 768px)': {
+            marginVertical: 5,
+            paddingVertical: 5,
+            height: 350,
+            width: 350,
+            resizeMode: 'contain',
         },
-        '@media (min-height: 769px) and (max-height: 1024px)':{
+        '@media (min-height:769px) and (max-height:1024px)': {
+            marginVertical: 5,
+            paddingVertical: 5,
             height: 600,
-            width: '100%',
-        }
+            width: 600,
+            resizeMode: 'contain',
+        },
     },
     title: {
         fontWeight: 'bold',
@@ -275,7 +280,18 @@ const { ids, styles } = StyleSheet.create({
         textShadowColor: "#000000",
         textShadowOffset: { width: 2, height: 2 },
         textShadowRadius: 2,
-        marginVertical: 5,
+        '@media (min-height: 320px) and (max-height: 480px)': {
+            marginVertical: 5
+        },
+        '@media (min-height: 481px) and (max-height: 768px)': {
+            marginVertical: 10
+        },
+        '@media (min-height: 769px) and (max-height: 1024px)': {
+            marginVertical: 5
+        },
+        '@media (min-height: 1025px) and (max-height: 1200px)': {
+            marginVertical: 20
+        }
     },
     text: {
         flex: 1,
@@ -286,7 +302,16 @@ const { ids, styles } = StyleSheet.create({
         textShadowColor: "#000000",
         textShadowOffset: { width: 2, height: 2 },
         textShadowRadius: 2,
-        marginVertical: 5
+        marginVertical: 5,
+        '@media (min-height: 320px) and (max-height: 480px)': {
+            marginVertical: 5
+        },
+        '@media (min-height: 481px) and (max-height: 768px)': {
+            marginVertical: 5
+        },
+        '@media (min-height: 769px) and (max-height: 1024px)': {
+            marginVertical: 5
+        },
     }
 });
 

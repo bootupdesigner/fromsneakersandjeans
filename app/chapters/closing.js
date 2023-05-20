@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, FlatList, Pressable, ImageBackground, Modal, Image } from 'react-native';
 import { useRouter } from 'expo-router';
-
 import Swiper from 'react-native-web-swiper';
 import * as Speech from 'expo-speech';
+
+import Avatar from '../../assets/Avatar';
+import StopPlay from '../../assets/stopPlay';
 
 import backgroundImage from '../../assets/images/sneakers_app_background.jpg';
 import Next from '../../assets/images/nextButton.png';
 import Back from '../../assets/images/backButton.png';
 import playButton from '../../assets/images/playButton.png';
-import stopButton from '../../assets/images/stopButton.png';
 import pinkPosiImage from '../../assets/images/pinkPosi.png'
 import chapterTitle from '../../assets/images/chapter-10-title.png'
 
@@ -23,10 +24,6 @@ const closing = () => {
     const speakText = (text) => {
         const firstSlide = (text);
         Speech.speak(firstSlide);
-    };
-
-    const stopPlay = () => {
-        Speech.stop();
     };
 
     const slides = appSlides.closingSlides;
@@ -53,9 +50,7 @@ const closing = () => {
                     {slides.map((slide, id) => {
                         return (
                             <View key={id} style={styles.content}>
-                                <View style={styles.left}>
-                                    <Image style={styles.image} source={slide.image} accessibilityLabel={slide.imageAlt} />
-                                </View>
+                                <Avatar source={slide.image} alt={slide.imageAlt} />
                                 <View style={styles.center}>
                                     <ScrollView style={styles.scrollContent}>
 
@@ -64,7 +59,7 @@ const closing = () => {
                                                 <View style={styles.row} key={index}>
 
                                                     <View>
-                                                    <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
+                                                        <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
                                                             <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
                                                         </TouchableOpacity>
                                                     </View>
@@ -77,7 +72,7 @@ const closing = () => {
                                                 <View style={styles.row} key={index}>
 
                                                     <View>
-                                                    <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
+                                                        <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
                                                             <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
                                                         </TouchableOpacity>
                                                     </View>
@@ -89,7 +84,7 @@ const closing = () => {
                                             slide.numberList.map((point, id) => (
                                                 <View key={id}>
                                                     <View style={styles.row}>
-                                                    <TouchableOpacity style={styles.listen} onPress={() => { speakText(point.id + '' + point.bullet + '' + point.summary) }}>
+                                                        <TouchableOpacity style={styles.listen} onPress={() => { speakText(point.id + '' + point.bullet + '' + point.summary) }}>
                                                             <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
                                                         </TouchableOpacity>
 
@@ -105,12 +100,9 @@ const closing = () => {
                                             )) : null}
                                     </ScrollView>
                                 </View>
-                                
-                                <View style={styles.right}>
-                                    <TouchableOpacity style={styles.listen} onPress={stopPlay}>
-                                        <Image style={styles.playOptions} source={stopButton} accessibilityLabel='stop button' />
-                                    </TouchableOpacity>
 
+                                <View style={styles.right}>
+                                    <StopPlay />
                                 </View>
                             </View>
                         )
@@ -194,7 +186,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         alignContent: 'center',
-        marginBottom:35
+        marginBottom: 35
     },
     h1: {
         fontWeight: 'bold',

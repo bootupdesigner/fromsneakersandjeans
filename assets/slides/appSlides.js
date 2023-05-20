@@ -240,7 +240,7 @@ const appSlides = {
                 {
                     heading: `Turn things around by:`,
                     bullet: [
-    
+
                         `being selective, remembering the positive times of your past.`,
                         `focusing on what you have going on in the present.`,
                         `seeing what can be done in your future, not what can’t.`,
@@ -427,7 +427,7 @@ const appSlides = {
                     id: '1',
                     summary: [
                         `Whether at home or in a restaurant, it is important to have a complete understanding of how to conduct yourself when entertaining or being entertained.`,
-    
+
                         `Anxiety while dining can be reduced by following guidelines on how to order your meal, what utensils to use and how to use them, and knowing proper table etiquette.`
                     ],
                     title: `Knowing simple guidelines will help relieve dining anxiety.`,
@@ -463,7 +463,7 @@ const appSlides = {
                         `When you don’t know what utensil to use, watch what your host does and follow suit.`,
                         `When you have finished, leave your plate where it is in the place setting. Do not push your plate away from you. Lay your fork and knife diagonally across your plate and side by side. The knife and fork should be placed as if they are pointing to the numbers 10 and 4 on a clock face.`
                     ]
-    
+
                 },
                 {
                     id: '4',
@@ -497,7 +497,7 @@ const appSlides = {
                         `If you have not eaten half of your meal, you can ask for the waiter to wrap it up. Say to the waiter, “Please wrap this for me.”`
                     ]
                 }
-    
+
             ],
             image: Thumbnail2,
             imageAlt: `chapter 4 etiquette`
@@ -523,7 +523,7 @@ const appSlides = {
                         `A - Napkin, B - Breakfast plate, C - Cereal bowl, D - Bread and butter plate with knife, E - Cup and saucer spoon, F - Water glass, G - Juice glass, H - Fork,  I - Knife, J - Teaspoon`
                     ],
                     tableSetting: breakfastEtiquette,
-                    tableSettingAlt:'breakfast table setting',
+                    tableSettingAlt: 'breakfast table setting',
                 }
             ],
             image: Thumbnail2,
@@ -586,19 +586,19 @@ const appSlides = {
                 },
                 {
                     id: '2',
-                    bullet:`When entering a room, it is your responsibility to greet those already in the room.`
+                    bullet: `When entering a room, it is your responsibility to greet those already in the room.`
                 },
                 {
                     id: '3',
-                    bullet:`When someone is speaking, do not interrupt or speak over her. Let her finish her point or thought, then begin to speak.`
+                    bullet: `When someone is speaking, do not interrupt or speak over her. Let her finish her point or thought, then begin to speak.`
                 },
                 {
-                    id:'4',
-                    bullet:`Show that you are listening by facing and looking at the speaker.`
+                    id: '4',
+                    bullet: `Show that you are listening by facing and looking at the speaker.`
                 },
                 {
-                    id:'5',
-                    bullet:`Do not talk with your mouth full.`
+                    id: '5',
+                    bullet: `Do not talk with your mouth full.`
                 }
             ],
             image: Thumbnail2,
@@ -613,7 +613,7 @@ const appSlides = {
             bullets: [
                 {
                     summary: [`To be the best person you can be, stay on top of your health. Get regular exams, medical and dental, as a way to prevent disease. Prevention of disease or illness will reduce your risk of medical problems in the future considerably. And don’t forget your immunizations (shots) and dental cleanings.`],
-                    title: `Preventive Care Schedule`,
+                    title: `Preventive Care Schedule\u00b9`,
                     tableData: [
                         [`Physical exam*`, `every 1-2 years`],
                         [`STI and HIV**`, `every 1 year, more frequently if sexually active`],
@@ -630,20 +630,32 @@ const appSlides = {
                     ]
                 }
             ],
+            reference: [
+                {
+                    id: 1,
+                    cite: `PublicHealth Health Guides | Teens 11 to 19`,
+                }
+            ],
             image: Thumbnail3,
             imageAlt: `chapter 5 health and hygiene`,
-            pinkPosi:Posi1
+            pinkPosi: Posi1
         },
         {
             id: '2',
             heading: `Puberty`,
             bullets: [
                 {
-                    summary: [`During your teenage years (adolescence), your body is going through many changes that are happening at a fast pace. These changes can be confusing, but they are also fun and new. For most young women, puberty happens between ages nine and sixteen.\u00b9 It can start earlier, but this is not as common. This is the time when you start to notice things like body hair (usually in your pubic area and underarms), curves to your body, growing taller faster, and getting your period. `]
+                    summary: [`During your teenage years (adolescence), your body is going through many changes that are happening at a fast pace. These changes can be confusing, but they are also fun and new. For most young women, puberty happens between ages eight and fourteen.\u00b2 It can start earlier, but this is not as common. This is the time when you start to notice things like body hair (usually in your pubic area and underarms), curves to your body, growing taller faster, and getting your period. `]
                 }
             ],
             image: Thumbnail3,
-            imageAlt: `chapter 5 health and hygiene`
+            imageAlt: `chapter 5 health and hygiene`,
+            reference: [
+                {
+                    id: 2,
+                    cite: `Timing and stages of puberty | girlshealth.gov`,
+                }
+            ]
         },
         {
             id: '3',
@@ -652,11 +664,11 @@ const appSlides = {
                 {
                     summary: [
                         `Your period is the shedding of tissue from your uterus. Your uterus is a hollow, pear-shaped organ in your lower abdomen that is filled with tissue and blood. Once a month (depending on your menstrual cycle), your uterus sheds this tissue because the egg that’s released (during ovulation) is not fertilized.`,
-    
+
                         `When you start your period, you’ll notice a spot of blood on your underwear or when you use the bathroom. The flow of blood from your vagina is usually light at first and may get heavier for a few days before tapering off. The blood may be a brownish color at first and then turn brighter red. Periods usually last three to seven days each month.`,
-    
+
                         `In order to get through this time in your life, you will need to begin using feminine hygiene products, like pads and tampons. You want to ask your mom, guardian or doctor for help with choosing the product that’s best for you. Usually, you start out using a pad, and don’t worry, no one will know that you’re wearing one. Here is the quick difference between tampons and pads: Tampons fit inside your vagina and are good to use when swimming or doing other physical activities, and pads have adhesive strips on them that stick to your underwear. You’ll need to change either one regularly.`,
-    
+
                         `Keep a calendar and mark the day you start your period each month. This can help you predict when you’ll have your next period and is also helpful when talking to your doctor.`
                     ]
                 }
@@ -714,7 +726,7 @@ const appSlides = {
                 {
                     summary: [
                         `A Pap test (commonly called a Pap smear) is a test that your doctor does during your pelvic exam to look for changes in the cells of your cervix. It is recommended that you start having a Pap test within the first three years of having sex or by your twenty-first birthday. Speak with your doctor about how often you should have a Pap test.`,
-    
+
                         `While you are lying on the table, the doctor will insert a metal or plastic device, called a speculum, in your vagina (to hold it open) and collect a small sample of cells from the surface of the cervix. The lab then exams the cells with a microscope for any cell changes, which may be signs of an abnormality. If your test results are abnormal, your doctor will advise you on what that means for you and the next course of action.`
                     ]
                 }
@@ -729,13 +741,13 @@ const appSlides = {
                 {
                     summary: [
                         `Premenstrual syndrome (commonly known as PMS) is that time between ovulation (releasing of an egg) and the first day of your period when you are feeling emotionally, and sometimes physically, stressed and troubled. Most women, both young and old, do experience PMS.`,
-    
+
                         `PMS symptoms vary from the emotional to the physical to the behavioral and can be mild to severe. Here are some common symptoms:`,
-    
+
                         `Physical symptoms include breast swelling and tenderness, bloating, water retention, weight gain, acne, food cravings, sleep changes, lack of energy, and pain, such as headaches, migraines, aching joints or muscles, cramps, and low back pain.`,
-    
+
                         `Emotional symptoms include depression, sadness, hopelessness, anger, irritability, anxiety, and mood swings. Many women also notice that they feel less alert and less able to concentrate.`,
-    
+
                         `Behavioral symptoms include withdrawal from family and friends, and physical or verbal aggression.`
                     ]
                 }
@@ -761,7 +773,7 @@ const appSlides = {
                 {
                     summary: [
                         `At one time or another, breasts were new for all of us, just like they are new for you. So starting out comparing them to other girls’ is perfectly normal. But don’t let this comparison turn into an unhealthy habit because everyone develops differently. And your breasts are perfect for your body. The key is wearing the right bra and practicing great breasts health habits now. And breast self-exams are one of those habits.`,
-    
+
                         `BSEs, as they are known, require checking your breasts once a month to help find any changes or problems, like lumps. As life would have it, many women have found their own breast problems. When you go in for your first Pap test, ask your doctor to teach you how to perform your monthly BSE. Each time you visit your doctor for your Pap test, the doctor does what’s called a clinical breast exam (or mammogram for women who are forty or over).`
                     ]
                 }
@@ -775,10 +787,10 @@ const appSlides = {
             bullets: [
                 {
                     summary: [
-                        `Depression is a mood disorder that may cause you to feel sad or irritated for a long while.\u00b2 If you are depressed, you may have difficulty enjoying school, spending time with friends or having fun. You may also have very low energy, want to sleep a lot or suffer other symptoms, like boredom or stomach pains.`,
-    
+                        `Depression is a mood disorder that may cause you to feel sad or irritated for a long while.\u00b3 If you are depressed, you may have difficulty enjoying school, spending time with friends or having fun. You may also have very low energy, want to sleep a lot or suffer other symptoms, like boredom or stomach pains.`,
+
                         `Depression can range from mild to severe. This varies from person to person and is caused by stressful life events, like a death, change of location, new medicines, or in some cases, it is genetic.`,
-    
+
                         `Because you are going through so many developmental changes in your teen years, if you are depressed, it may not get recognized immediately. This is not because people aren’t paying attention to you; this is because the symptoms of depression are subtle and can be challenging to recognize. According to Kaiser Permanente, the main symptoms used to diagnose depression in children of any age are long-term irritability, sadness and a loss of pleasure in activities they used to enjoy. Other symptoms include:`,
                     ],
                     bullet: [
@@ -790,6 +802,12 @@ const appSlides = {
                         `Speaking more slowly than usual`
                     ],
                     paragraph: [`If you think you may be depressed, you should speak with your parent, an adult you trust or your doctor, and tell him or her what’s going on. You need to have a doctor’s appointment to figure out your depression level and to get you the appropriate treatment. Depression doesn’t just “go away”; you need some help. And if you’re not sure you are depressed, you can call the Suicide and Crisis Lifeline at 988 (just like dialing 911), twenty-four hours a day, seven days a week.`]
+                }
+            ],
+            reference: [
+                {
+                    id: 3,
+                    cite: `NIMH » Depression (nih.gov)`,
                 }
             ],
             image: Thumbnail3,
@@ -905,9 +923,9 @@ const appSlides = {
                 {
                     summary: [
                         `Acne is a very normal and common skin condition that happens when oil and dead skin cells clog your skin’s pores. The main forms of acne are pimples, whiteheads and blackheads.`,
-    
+
                         `Here’s how it happens: Your skin glands may produce (make) more oil than your skin needs to stay moist. When there is too much oil, it mixes with dead skin cells and clogs pores. On occasion, this can cause a bacterial infection. You can find acne on your face, neck, chest, shoulders, or back. Although most common in teens and young adults, it can start at any time and last throughout your life. How much acne you have and where you have it depends on you. This varies from person to person.`,
-    
+
                         `Treatment may reduce or stop your outbreaks and prevent scarring. Most cases of acne are treated with nonprescription medicines at home. Severe acne may require prescription medicines.`
                     ]
                 }
@@ -948,11 +966,11 @@ const appSlides = {
                 {
                     summary: [
                         `Please bathe or shower. There’s truly nothing else I can say here. Taking a bath or shower is very important, especially after sports or working out. A regular bar of soap should work well, but in some cases, there is a need for medicated soap due to allergies. If you find yourself itching or breaking out after bathing, speak with your parent, guardian or doctor because this may be due to allergies.`,
-    
+
                         `Your genitals and anal area need to be cleaned well because of natural secretions that can cause irritation and infection if left unclean. Wash off well after soaping. Drying with a clean towel is important. Avoid sharing soaps and towels. Use deodorant or antiperspirant to reduce body odor and perspiration.`
                     ]
                 },
-    
+
             ],
             image: Thumbnail3,
             imageAlt: `chapter 5 health and hygiene`
@@ -966,7 +984,7 @@ const appSlides = {
                         `No woman feels completely comfortable when she has her cycle. Tension, cramps and everything in between makes for a stressful time, but proper hygiene is still important. Cleanliness and changing your pad or tampon as often as is necessary reduces the possibility of body odor. You should not shy away from showering during this time.`
                     ]
                 },
-    
+
             ],
             image: Thumbnail3,
             imageAlt: `chapter 5 health and hygiene`
@@ -978,11 +996,11 @@ const appSlides = {
                 {
                     summary: [
                         `Urinary tract infections are more likely to happen to women than men. It happens when bacteria travel through the urethra and start breeding there. The infection causes pain or a burning sensation during urination. Itching, frequent urination, fever, and chills can also result from a urinary tract infection. You should seek medical attention to treat the infection.`,
-    
+
                         `Urinary tract infections are an irritation you want to avoid. You can do this by washing or wiping front to back after urinating or defecating. Wear loose-fitting cotton underwear. Drink plenty of water. And don’t hold back when you have to urinate. If the condition continues after initial treatment, schedule another appointment with your doctor`
                     ]
                 },
-    
+
             ],
             image: Thumbnail3,
             imageAlt: `chapter 5 health and hygiene`
@@ -996,7 +1014,7 @@ const appSlides = {
                         `Having good oral hygiene is extremely important. A good brushing of your teeth is soft, not harsh, and takes two minutes—one minute on the front and one minute on the inside. If you can, you should invest in an electric toothbrush; they do wonders. Be sure to brush and floss teeth twice a day and rinse well after every meal to remove food particles. Brushing before going to bed and brushing your tongue are also important. You want to schedule a general cleaning appointment with your dentist twice a year (usually covered by insurance based on what you need).`
                     ]
                 },
-    
+
             ],
             image: Thumbnail3,
             imageAlt: `chapter 5 health and hygiene`
@@ -1011,7 +1029,7 @@ const appSlides = {
                         `There are other reasons for bad breath. Colds, sinuses, throat infections, or tonsils can cause bad breath. Diseases of the stomach, liver and intestines, or uncontrolled diabetes are also possible causes. Consult your dentist if bad breath continues after good dental care; you need to see a doctor.`
                     ]
                 },
-    
+
             ],
             image: Thumbnail3,
             imageAlt: `chapter 5 health and hygiene`
@@ -1025,7 +1043,7 @@ const appSlides = {
                         `Keep hands clean. You can avoid catching a multitude of infections, including the flu. Wash your hands thoroughly with soap and water before and after every meal, after using the restroom, after using a handkerchief or tissue, or after handling raw foods. Soaping and rinsing should cover the areas between fingers, nails and back of the hand. Convention says that washing your hands the length of singing one round of the “Happy Birthday” song or thirty seconds should be enough to clean them thoroughly. Dry your hands with a clean towel after each wash. Avoid cracking and hand irritation by moisturizing after drying.`
                     ]
                 },
-    
+
             ],
             image: Thumbnail3,
             imageAlt: `chapter 5 health and hygiene`
@@ -1039,7 +1057,7 @@ const appSlides = {
                         `Long nails make it very difficult to get a lot done at work. Trim nails can make your life easier, but don’t cut them too close or they will pinch the skin. Also pay attention to your nails. They can be a sign of something going on in your body. Brittle or discolored nails are signs of deficiencies or disease conditions. Don’t keep your nails painted continuously. It causes the keratin (what nails are made of) to split. Pamper your hands and nails once every three weeks with a manicure. Choose your manicure kit with care. Soak your hands in warm water for ten minutes. Massage your hands, then thoroughly clean and shape your nails.`
                     ]
                 },
-    
+
             ],
             image: Thumbnail3,
             imageAlt: `chapter 5 health and hygiene`
@@ -1053,7 +1071,7 @@ const appSlides = {
                         `Give your feet a good scrub with a pumice stone not made of abrasive material. Dry after bathing between toes. Keep toenails clipped. You can also keep your feet clean by:`
                     ]
                 },
-    
+
             ],
             numberList: [
                 {
@@ -1127,20 +1145,20 @@ const appSlides = {
                     bullet: `To be the best person you can be, stay on top of your health and hygiene.`
                 },
                 {
-                    id:'2',
-                    bullet:`Hygiene is about being clean and groomed.`
+                    id: '2',
+                    bullet: `Hygiene is about being clean and groomed.`
                 },
                 {
-                    id:'3',
-                    bullet:`Puberty is the time when you start to notice natural, normal changes to your body.`
+                    id: '3',
+                    bullet: `Puberty is the time when you start to notice natural, normal changes to your body.`
                 },
                 {
-                    id:'4',
-                    bullet:`A breast self-exam (BSE) consists of checking your breasts once a month to help find any changes or problems.`
+                    id: '4',
+                    bullet: `A breast self-exam (BSE) consists of checking your breasts once a month to help find any changes or problems.`
                 },
                 {
-                    id:'5',
-                    bullet:`Depression is a mood disorder that may cause you to feel sad or irritated for a long while. If you’re not sure you are depressed, you can call the Suicide and Crisis Lifeline at 988 (just like dialing 911), twenty-four hours a day, seven days a week.`
+                    id: '5',
+                    bullet: `Depression is a mood disorder that may cause you to feel sad or irritated for a long while. If you’re not sure you are depressed, you can call the Suicide and Crisis Lifeline at 988 (just like dialing 911), twenty-four hours a day, seven days a week.`
                 },
             ],
             image: Remember1,
@@ -1172,7 +1190,7 @@ const appSlides = {
             id: '2',
             bullets: [
                 {
-                    title: `Moderate physical activities include:`,
+                    title: `Moderate physical activities include:\u2074`,
                     tableData: [
                         ['Walking briskly', 'about 3 ½ miles per hour'],
                         ['hiking', ''],
@@ -1182,6 +1200,12 @@ const appSlides = {
                     ]
                 }
             ],
+            reference: [
+                {
+                    id: 4,
+                    cite: `MyPlate Community Toolkit`,
+                }
+            ],
             image: Thumbnail4,
             imageAlt: `chapter 6 physical activity and nutrition`
         },
@@ -1189,7 +1213,7 @@ const appSlides = {
             id: '3',
             bullets: [
                 {
-                    title: `Vigorous physical activities include:`,
+                    title: `Vigorous physical activities include:\u2074`,
                     tableData: [
                         ['Running/jogging', '5 miles per hour'],
                         ['Bicycling', 'more than 10 miles per hour'],
@@ -1199,6 +1223,12 @@ const appSlides = {
                         ['Weight lifting', 'vigorous effort'],
                         ['Basketball', 'competitive']
                     ]
+                }
+            ],
+            reference: [
+                {
+                    id: 4,
+                    cite: `MyPlate Community Toolkit`,
                 }
             ],
             image: Thumbnail4,
@@ -1225,17 +1255,17 @@ const appSlides = {
                 {
                     summary: [
                         `Grains: eat at least three ounces of 100 percent whole grain bread, cereal, crackers, rice, or pasta every day.`,
-    
+
                         `Vegetables: vary your vegetables; eat more dark green and orange veggies, and more dry beans and peas.`,
-    
+
                         `Fruits: focus on fruits; eat a variety of fruit; choose fresh, frozen, canned, or dried fruit; go easy on fruit juices.`,
-    
+
                         `Milk: get your calcium-rich foods; go low-fat or fat-free; if you don’t or can’t consume milk, choose lactose-free products or other calcium sources.`,
-    
+
                         `Meats: go lean on protein; choose low-fat or lean meats and poultry; bake it, broil it or grill it; vary your choices—with more fish, beans, peas, nuts, and seeds.`,
-    
+
                         `Oils: know your fat; make the most of your fat sources from fish, nuts and vegetable oils; limit solid fats like butter, stick margarine, shortening, and lard.`,
-    
+
                         `The charts and information listed are general information. Please always check with your doctor before making major changes to your physical activity and diet.`
                     ],
                 }
@@ -1250,9 +1280,9 @@ const appSlides = {
                 {
                     summary: [
                         `When we worry too much about the changes to our bodies, we can develop eating disorders. There are many types of eating disorders, but the main three types can take the forms of starving yourself (anorexia nervosa); eating a lot of food at one time, then throwing it up or using a laxative to go to the bathroom (bulimia nervosa); or doing much too much exercise.`,
-    
+
                         `If you are doing any of these things or you think you may be, you must speak with an adult you feel comfortable with or your doctor. You can also call the National Eating Disorders Association Helpline at 1-800-931-2237, twenty-four hours a day, seven days a week.`,
-    
+
                         `I encourage you to let your body grow and develop in its own way. Eat healthy, be physically active and see your doctor yearly for regular checkups. If there is anything wrong or if there are any problems with the way you are developing and growing, your doctor will let you know. But take it from experience, I have learned, that WE are PERFECT just as we are.`
                     ],
                 }
@@ -1294,7 +1324,7 @@ const appSlides = {
             id: '1',
             summary: [
                 `Because your body is starting to develop more curves, you will find it feeling softer than before and having more fat than muscle. This is perfectly normal, and you may start noticing it happening more in your hips, bottom and thighs.`,
-    
+
                 `This is the time when most young women start to think they look strange or get very self-conscious. But remember that you are not alone. Every adult woman has gone through this stage. And every other teen girl is going through it right now. There is no such thing as the perfect body; there is only the body that is perfect for you. And that body is the one you have right now—YOURS. We all grow and develop at our own pace, and always remember, YOU DETERMINE YOUR WORTH. It is not based on how big or small any part of your body is.`
             ],
             image: Thumbnail5,
@@ -1302,15 +1332,21 @@ const appSlides = {
         },
         {
             id: '2',
-            heading: `Bras\u00b3`,
+            heading: `Bras\u2075`,
             bullets: [
                 {
                     summary: [
                         `Bras provide the necessary support your growing body needs, as well as prevent you from damaging your breast tissue. Wearing the wrong bra can cause all sorts of medical problems for you, including back pain, neck pain, headaches, and muscle tension. Mainly, women who wear the wrong bra have poor posture because of it.`,
                         `Finding a bra that is the right fit and size for you may seem like a challenge, but it’s not.`,
-                        `Bra sizes are determined by your chest size and your cup size. Your chest size (or band) is the part of the bra that runs across your chest and back, and is written in number form on the bra (32, 34, 36, 38, and so on). Your cups are the round parts of the bra that hold your breasts in place and are written in alphabet form on the bra (AA, A, B, C, D, DD, and so on). Because there are many combinations of chest and cup sizes, it is important to have your measurements done by a professional. Feel free to stop in any department store that sells women’s lingerie for a bra fitting. I have had many fittings done over the years, and they have been free. I recommend that you go into a department store, like Nordstrom’s or JCPenney (they are the best), and have a bra fitting done by one of the associates to find out what size you are.`,
+                        `Bra sizes are determined by your chest size and your cup size. Your chest size (or band) is the part of the bra that runs across your chest and back, and is written in number form on the bra (32, 34, 36, 38, and so on). Your cups are the round parts of the bra that hold your breasts in place and are written in alphabet form on the bra (AA, A, B, C, D, DD, and so on). Because there are many combinations of chest and cup sizes, it is important to have your measurements done by a professional. Feel free to stop in any department store that sells women’s lingerie for a bra fitting. I have had many fittings done over the years, and they have been free. I recommend that you go into a department store, and have a bra fitting done by one of the associates to find out what size you are.`,
                         `For those of you who are athletic or do physical activity during gym, you want to find a nice, comfortable but snug sports bra. These come in the same size measurements as your regular bra. And lastly, make a mental note of the fabrics that you find comfortable to wear, because different materials can irritate your skin.`
                     ],
+                }
+            ],
+            reference: [
+                {
+                    id: 5,
+                    cite: `Breasts and Bras (for Kids) - Nemours KidsHealth`,
                 }
             ],
             image: Thumbnail5,
@@ -1379,7 +1415,7 @@ const appSlides = {
                             heading: `Tops`,
                             bullet: [
                                 `Avoid too-baggy tops or too-tight tops: The looser tops will make you look large all over; the tight tops will make you look out of proportion to your hips. Look for fitted—not skintight—T-shirts (something with some stretch) and button-front tops. V-necks, cowlnecks and open collars all call attention to the face, which is always a good thing.`,
-    
+
                                 `Jackets and blazers should hit anywhere but the widest point of your hips. That could mean right below the waist to mid-thigh, depending on your height. Wear jackets and blazers open for the best vertical lines.`
                             ]
                         },
@@ -1388,7 +1424,7 @@ const appSlides = {
                             bullet: [
                                 `Look for dresses that nip in at the waist and slightly flare out over hips and thighs.`,
                                 `You can pull off a full-skirted ballgown because it will hide heavy hips and thighs.`,
-                                `Try sleeveless and strapless dresses to play up pretty shoulders and arms.`, 
+                                `Try sleeveless and strapless dresses to play up pretty shoulders and arms.`,
                                 `An empire, or raised waist dress brings the eye up away from problem areas. Careful, though. Sometimes this gets mistaken for a maternity look with fuller figures.`
                             ]
                         }
@@ -1442,7 +1478,7 @@ const appSlides = {
             ],
             image: Thumbnail5,
             imageAlt: `chapter 7 Your Body`,
-    
+
         },
         {
             id: '5',
@@ -1453,12 +1489,12 @@ const appSlides = {
                     bullet: `There is no such thing as the perfect body, there is only the body that is perfect for you.`
                 },
                 {
-                    id:'2',
-                    bullet:`YOU DETERMINE YOUR WORTH.`
+                    id: '2',
+                    bullet: `YOU DETERMINE YOUR WORTH.`
                 },
                 {
-                    id:'3',
-                    bullet:`Not every outfit or style works for every body.`
+                    id: '3',
+                    bullet: `Not every outfit or style works for every body.`
                 },
             ],
             image: Thumbnail5,
@@ -1469,7 +1505,7 @@ const appSlides = {
         {
             id: '1',
             heading: `Dating`,
-            summary: [`At this stage in your life, your family may feel that you are too young to need a boyfriend. But I understand you are interested, so here are some tips\u2074 to get you started and keep you safe:`],
+            summary: [`At this stage in your life, your family may feel that you are too young to need a boyfriend. But I understand you are interested, so here are some tips\u2076 to get you started and keep you safe:`],
             numberList: [
                 {
                     id: '1',
@@ -1500,6 +1536,12 @@ const appSlides = {
                     bullet: [`Tell at least one friend and your parents/guardians who you are going out with and where you are going. Be sure to also tell them how to reach you.`]
                 },
             ],
+            reference: [
+                {
+                    id: 6,
+                    cite: `Dating | girlshealth.gov`,
+                },
+            ],
             image: Thumbnail6,
             imageAlt: `chapter 8 Dating and Sex`,
             pinkPosi: Posi12
@@ -1509,7 +1551,7 @@ const appSlides = {
             heading: `Sex`,
             summary: [
                 `These days, there are different types of sex. They are anal, oral and vaginal. I know everyone acts like oral sex is no big deal, but it is. You can get a sexually transmitted infection (STI) or human immunodeficiency virus (HIV) through oral sex just as easily as you can by having unsafe vaginal sex.`,
-    
+
                 `It is really important for you to understand that YOU DETERMINE YOUR WORTH. It’s not determined by the boy who tells you he loves you. It is not determined by how many times you have sex. It is not determined by people on TV or in the movies. YOU—YOU put a value on your life and your body. Having sex is a really emotional thing, and having it with the wrong person at the wrong time can disrupt you emotionally. So know that the time will come when you are healthy, happy, and in a loving relationship, but that time is not now. Give your mind and your body space to develop and learn what you really want from that special person.`,
             ],
             bullets: [
@@ -1526,7 +1568,7 @@ const appSlides = {
             heading: `Sexually Transmitted Infections (STIs)`,
             summary: [
                 `Sexually transmitted infections (STIs)—more commonly known as sexually transmitted diseases (STDs)—are infections or diseases spread by sexual contact. They can also be passed to your baby during pregnancy.`,
-    
+
                 `Exposure to an STI can occur anytime you have sex or close contact with the genitals, mouth or rectum of another person. But exposure is more likely if a person has many sex partners or does not use condoms. Contracting an STI can be prevented by not having sex of any kind (abstinence).`
             ],
             bullets: [
@@ -1553,7 +1595,7 @@ const appSlides = {
             heading: `Human Papillomavirus Virus (or HPV)`,
             summary: [
                 `Human papillomavirus (HPV) is considered a sexually transmitted infection (STI) because it is caused by a virus that can be spread by sexual contact. There are many types of HPV. Some types cause warts that you can see or feel. Other types do not cause any symptoms. Most people do not know they have an HPV infection.`,
-    
+
                 `HPV creates risks for cervical and anal cancer, and is found during a Pap test. A new vaccine called GARDASIL® protects against four types of HPV, which together cause most cases of cervical cancer and genital warts. According to the GARDASIL® web site, www.oneless.com, GARDASIL® is for girls and women ages 9 to 26. GARDASIL® works when given before you have any contact with HPV Types 6, 11, 16, and 18. Please talk with your parent, guardian or doctor for more information on this vaccine.`
             ],
             image: Thumbnail6,
@@ -1596,9 +1638,9 @@ const appSlides = {
             heading: `Birth Control`,
             summary: [
                 `Whether you believe it or not, life is very different after having sex, getting pregnant or contracting an STI. And the only way to prevent pregnancy, an STI or HIV is to practice abstinence (no sex of any kind).`,
-    
+
                 `But if you are already having sex or are planning to have sex, it is my job to make sure you are having safe sex. Always speak with your parent or guardian. And always use a condom—no matter what. Bring your own and make sure your partner is wearing it by looking for yourself. You can get pregnant the first time. You can get an STI the first time. You can get HIV the first time. Make sure you are safe every time.`,
-    
+
                 `Condoms are not optional. Just because you are on the pill, that doesn’t mean you shouldn’t use a condom. Here are other birth control methods for you to speak with your parent, guardian or doctor about:`
             ],
             numberList: [
@@ -1631,7 +1673,7 @@ const appSlides = {
             heading: `Pregnancy`,
             summary: [
                 `Because you are now having a menstrual cycle, you CAN get pregnant—whether you are on or off of your period. A pregnancy occurs because the egg that is released during ovulation has been fertilized by the sperm from a boy’s penis. Again, you CAN get pregnant at any time during the month. The most common time to get pregnant is the five days before your egg is released and the day of release. But because predicting when you ovulate is complicated, it is possible to get pregnant at any time—especially if your period is irregular or you miss it frequently.`,
-    
+
                 `Babies don’t come from a stork; no one drops them off at your door; you don’t go to the hospital and come home with one. If you get pregnant, you must carry that baby in your uterus for forty weeks then deliver it through your vagina. And if this sounds a little scary, that’s because it is. I know you have seen the size of some babies; that big baby came from the very small vaginal canal that you have. This is not a joke, and it’s not a game. Babies are not toys that you can play with today and give to someone else tomorrow. They require feeding, changing, bathing, cooing, playing, teaching, attention, and everything else that you require, times two hundred.`
             ],
             table: [
@@ -1645,7 +1687,7 @@ const appSlides = {
                         [`I can’t get pregnant if I have sex during my period.`, `Although the chance of getting pregnant at this time is less for most women, if you have short cycles (less than 28 days) or irregular periods, you may be able to get pregnant if you have sex during your period.`],
                         [`I can’t get pregnant if I have sex in a hot tub.`, `If you have unprotected sex, you can get pregnant, regardless of where you are.`]
                     ],
-                    tableRef:`Adapted from Kaiser Permanente, members.kp.org, “Myths about sex and pregnancy,” last viewed March 21, 2007.`
+                    tableRef: `Adapted from Kaiser Permanente, members.kp.org, “Myths about sex and pregnancy,” last viewed March 21, 2007.`
                 }
             ],
             image: Thumbnail6,
@@ -1711,7 +1753,13 @@ const appSlides = {
     safetySlides: [
         {
             id: '1',
-            heading: `Bullying\u2075`,
+            heading: `Bullying\u2077`,
+            reference:[
+                {
+                    id: 7,
+                    cite: `Bullying | girlshealth.gov`
+                }
+            ],
             summary: [`Bullying is when one person, or a group of people, repeatedly hurts someone else. Bullying involves hurting someone who is often weaker or less confident. There are many types of bullying, and for young women, bullying usually involves more teasing than hitting. Bullying is often done on purpose, and it can happen anywhere, such as at school, in the park, on a sports team, or even at home. Often the person being bullied has a hard time defending herself.`],
             bullets: [
                 {
@@ -1942,10 +1990,10 @@ const appSlides = {
         },
         {
             id: '7',
-            heading: `Date Rape\u2076`,
+            heading: `Date Rape\u2078`,
             summary: [
-                `As many as one in four high school girls have reported being sexually abused. If you have been sexually abused in the past, that puts you at higher risk for sexual abuse by a date. This is known as date rape—when forced sex occurs between two people who already know each other. Even if you have already agreed to and had sex with a person before, he or she doesn’t have the right to force you to have sex.`,
-    
+                `About 1 in 9 female high school students report having experienced sexual dating violence in the last year.If you have been sexually abused in the past, that puts you at higher risk for sexual abuse by a date. This is known as date rape—when forced sex occurs between two people who already know each other. Even if you have already agreed to and had sex with a person before, he or she doesn’t have the right to force you to have sex.`,
+
                 `Rape has nothing to do with love. It is about violence and control. Of course, not every person you meet is dangerous and planning to hurt you. But you need to take precautions and be prepared. Here are some tips to help keep you safe:`
             ],
             numberList: [
@@ -1982,10 +2030,10 @@ const appSlides = {
             heading: `Dating Abuse/Relationship Violence`,
             summary: [
                 `We all know it. We see it every day on the news, and we read about it in the paper. Then we see talk shows of various couples who think dating with violence equals dating with love. WRONG.`,
-    
+
                 `Contrary to popular belief, both men and women are involved in dating abuse/domestic violence. In addition, both genders are perpetrators of physical, emotional and psychological violence and abuse. You should not aspire to be in relationships like these. If you come across a person who is displaying the type of characteristics that suggest violent tendencies, get out immediately. Studies show that people who abuse their dating partners are more depressed, have lower self-esteem, and are more aggressive than peers.`,
-    
-                `People who abuse usually show signs of\u2076:`
+
+                `People who abuse usually show signs of\u2078:`
             ],
             bullets: [
                 {
@@ -2001,39 +2049,39 @@ const appSlides = {
                     ],
                     summary: [
                         `WHEN PEOPLE SHOW YOU WHO THEY ARE, ACCEPT IT AND MOVE ON. This is how they behave. Everyone has some good in them. And I know that everyone is not 100 percent bad all of the time, but do you really want to be around when they are?`,
-    
+
                         `According to the Department of Justice, there are five basic types of relationship violence. They are used to get and keep power over you. These types of abuse can bully, manipulate, humiliate, isolate, frighten, terrorize, force, threaten, blame, hurt, injure, or wound you (and sometimes others).`
                     ]
                 }
             ],
             term: [
                 {
-                    word:`Physical Abuse:`,
-                    definition:`Hitting, slapping, pushing, grabbing, pinching, biting, hair pulling, and the list goes on. Physical abuse also includes stopping you from getting medical care or forcing you to drink or do drugs.`,
+                    word: `Physical Abuse:`,
+                    definition: `Hitting, slapping, pushing, grabbing, pinching, biting, hair pulling, and the list goes on. Physical abuse also includes stopping you from getting medical care or forcing you to drink or do drugs.`,
                 },
                 {
-                    word:`Sexual Abuse:`,
-                    definition:`Forcing or trying to force any sexual contact or behavior without your say-so. Sexual abuse includes, but is surely not limited to, marital rape, attacks on sexual parts of the body, forcing sex after physical violence has occurred, or treating one in a sexually shameful manner.`,
+                    word: `Sexual Abuse:`,
+                    definition: `Forcing or trying to force any sexual contact or behavior without your say-so. Sexual abuse includes, but is surely not limited to, marital rape, attacks on sexual parts of the body, forcing sex after physical violence has occurred, or treating one in a sexually shameful manner.`,
                 },
                 {
-                    word:`Emotional Abuse:`,
-                    definition:`Putting you down and reducing your sense of self-worth and/or self-esteem. This may include, but is not limited to, constant criticism, lessening your abilities, name-calling, or damaging your relationship with your children.`,
+                    word: `Emotional Abuse:`,
+                    definition: `Putting you down and reducing your sense of self-worth and/or self-esteem. This may include, but is not limited to, constant criticism, lessening your abilities, name-calling, or damaging your relationship with your children.`,
                 },
                 {
-                    word:`Economic Abuse:`,
-                    definition:`Making or attempting to make you depend on someone for money. Taking and keeping total control over your (and his or her) finances, withholding your contact to money, or forbidding you to go to church, school, or work.`,
+                    word: `Economic Abuse:`,
+                    definition: `Making or attempting to make you depend on someone for money. Taking and keeping total control over your (and his or her) finances, withholding your contact to money, or forbidding you to go to church, school, or work.`,
                 },
                 {
-                    word:`Psychological Abuse:`,
-                    definition:`Causing fear by bullying; threatening to physically harm himself or herself, you, your children, or your family or friends; damaging your pets and/or property; and forcing you to be lonely, away from family, friends, church, school, and/or work.`,
-                    note:`**Abuse often forgotten and never reported**`
+                    word: `Psychological Abuse:`,
+                    definition: `Causing fear by bullying; threatening to physically harm himself or herself, you, your children, or your family or friends; damaging your pets and/or property; and forcing you to be lonely, away from family, friends, church, school, and/or work.`,
+                    note: `**Abuse often forgotten and never reported**`
                 },
                 {
-                    word:`Spiritual Abuse:`,
-                    definition:`Terrorizing and using force to stop you from carrying out your religious and spiritual practices.`,
+                    word: `Spiritual Abuse:`,
+                    definition: `Terrorizing and using force to stop you from carrying out your religious and spiritual practices.`,
                 },
             ],
-            paragraph:[`If you are dating an abuser or are in a family of abuse, I encourage you to be strong and take a stand to protect the most important thing in this world—YOU. Don’t sit back, lie down, and allow this violence to rob you of your future, rob you of your purpose, rob you of your promise. SPEAK OUT—whether you are the victim or you know someone who is a victim—SPEAK OUT. Contact your local police department or speak with your school principal or a teacher you trust. Get help.`],
+            paragraph: [`If you are dating an abuser or are in a family of abuse, I encourage you to be strong and take a stand to protect the most important thing in this world—YOU. Don’t sit back, lie down, and allow this violence to rob you of your future, rob you of your purpose, rob you of your promise. SPEAK OUT—whether you are the victim or you know someone who is a victim—SPEAK OUT. Contact your local police department or speak with your school principal or a teacher you trust. Get help.`],
             image: Thumbnail7,
             imageAlt: `chapter 9 safety`
         },
@@ -2042,15 +2090,15 @@ const appSlides = {
             heading: `HERE’S A LITTLE STORY FOR YOU:`,
             summary: [
                 `As an adult, I dated a guy whom I didn’t think was a good fit for me. After telling him several times that I didn’t think we would be a good couple, he refused to accept it. So, I wrote a list of reasons for not wanting to date him. I then gave him a call at work and began citing the list. After going over my list, which was about ten or eleven items, this guy began to go over his list of reasons why we should continue to see each other. Well, as you can imagine, I was at a crossroads. I expected him to argue my list, but I didn’t expect him to have his own list. So, a conversation that should have taken approximately fifteen minutes was well on its way to thirty-five to forty-five minutes. He proceeded to tell me that he “can fix” anything that I had a problem with. Why? Because he saw my list as a communication tool. I was “communicating” what I wanted and needed from him. According to him, he now knew what I wanted and what he needed to change so that he could be who I wanted him to be. As flattering as this may seem, it’s not. I told him he was perfect the way he was, for someone else.`,
-    
+
                 `I don’t care to be with anyone who feels the need to change himself to be who he isn’t. You will learn that we travel through life trying to “find” ourselves, trying to know who we are. And in many instances, some of us will never know. I am not going through my journey to be with someone who knows so little about the importance of being his true self.`,
-    
+
                 `Let me tell you something: If you are with someone who insists on changing to be with you, be wary. Be wary, because at some point, he or she will realize that they are not being true to them, and it may get ugly for you. You don’t want to be blamed for his or her bad decision.`,
-    
+
                 `And if you are with someone who wants you to change yourself to be with him or her, RUN! Run from them as fast as you can, because they are trying to control you.`,
-    
+
                 `You know, I grew up in a home of domestic violence and the worse thing you could ever do is allow yourself to be devalued. We are all human. We are all children of God. And we all deserve to be in happy, healthy, loving relationships. YOU put a value on your life and your body. YOU determine your worth. YOU decide what goes and what doesn’t go in your life.`,
-    
+
                 `You must be careful not to romanticize violence. You can’t view violence as a one-time thing. You can’t believe that “Love conquers all…” Not everything can be fixed. Use the experience as a learning experience and move on.`
             ],
             image: Thumbnail7,
@@ -2070,40 +2118,40 @@ const appSlides = {
             ],
             numberList: [
                 {
-                    id:'1',
-                    bullet:`YOU DETERMINE YOUR WORTH`
+                    id: '1',
+                    bullet: `YOU DETERMINE YOUR WORTH`
                 },
                 {
-                    id:'2',
-                    bullet:`Making yourself feel good shouldn’t come at the price of making others feel small.`
+                    id: '2',
+                    bullet: `Making yourself feel good shouldn’t come at the price of making others feel small.`
                 },
                 {
-                    id:'3',
-                    bullet:`Marijuana (weed/blunts) is an illegal drug.`
+                    id: '3',
+                    bullet: `Marijuana (weed/blunts) is an illegal drug.`
                 },
                 {
-                    id:'4',
-                    bullet:`If you, your friends or family members are using and abusing alcohol and/or drugs, please call NineLine at 1-800-999-9999 (available twenty-four hours a day, seven days a week), and speak with a counselor.`
+                    id: '4',
+                    bullet: `If you, your friends or family members are using and abusing alcohol and/or drugs, please call NineLine at 1-800-999-9999 (available twenty-four hours a day, seven days a week), and speak with a counselor.`
                 },
                 {
-                    id:'5',
-                    bullet:`Date rape happens when forced sex occurs between two people who already know each other`
+                    id: '5',
+                    bullet: `Date rape happens when forced sex occurs between two people who already know each other`
                 },
                 {
-                    id:'6',
-                    bullet:`DO NOT give your real name, phone number, social security number, or other personal information to people you have met online.`
+                    id: '6',
+                    bullet: `DO NOT give your real name, phone number, social security number, or other personal information to people you have met online.`
                 },
                 {
-                    id:'7',
-                    bullet:`The six types of abuse are physical, sexual, emotional, economic, psychological, and spiritual.`
+                    id: '7',
+                    bullet: `The six types of abuse are physical, sexual, emotional, economic, psychological, and spiritual.`
                 },
                 {
-                    id:'8',
-                    bullet:`Abuse is used to bully, manipulate, humiliate, isolate, frighten, terrorize, force, threaten, blame, hurt, injure, or wound you (and sometimes others).`
+                    id: '8',
+                    bullet: `Abuse is used to bully, manipulate, humiliate, isolate, frighten, terrorize, force, threaten, blame, hurt, injure, or wound you (and sometimes others).`
                 },
                 {
-                    id:'9',
-                    bullet:`WHEN PEOPLE SHOW YOU WHO THEY ARE, ACCEPT IT AND MOVE ON.`
+                    id: '9',
+                    bullet: `WHEN PEOPLE SHOW YOU WHO THEY ARE, ACCEPT IT AND MOVE ON.`
                 },
             ],
             image: Thumbnail7,
@@ -2118,18 +2166,18 @@ const appSlides = {
             numberList: [
                 {
                     id: '1',
-                    bullet:`BELIEVE IN THE POWER OF THE POSSIBILITY.™ `,
-                    summary:`If you give yourself the option to change, you just might.`
+                    bullet: `BELIEVE IN THE POWER OF THE POSSIBILITY.™ `,
+                    summary: `If you give yourself the option to change, you just might.`
                 },
                 {
-                    id:'2',
-                    bullet:`DON’T LET YOUR CIRCUMSTANCE DETERMINE YOUR DESTINY.™`,
-                    summary:`Where you are from, who you have been doesn’t have to dictate where you go and who you become.`,
+                    id: '2',
+                    bullet: `DON’T LET YOUR CIRCUMSTANCE DETERMINE YOUR DESTINY.™`,
+                    summary: `Where you are from, who you have been doesn’t have to dictate where you go and who you become.`,
                 },
                 {
-                    id:'3',
-                    bullet:`BE GOOD FOR YOURSELF.®`,
-                    summary:`When you are good for yourself, you and your life become an example of encouragement for your family, friends and countless others. Being good for yourself is about being whole and taking care of you or you won’t be able to take care of others.`
+                    id: '3',
+                    bullet: `BE GOOD FOR YOURSELF.®`,
+                    summary: `When you are good for yourself, you and your life become an example of encouragement for your family, friends and countless others. Being good for yourself is about being whole and taking care of you or you won’t be able to take care of others.`
                 }
             ],
             image: Thumbnail8,

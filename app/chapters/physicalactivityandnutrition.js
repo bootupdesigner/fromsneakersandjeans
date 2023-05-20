@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet, FlatList, Pressable, ImageBackground, Modal, Image } from 'react-native';
-import { useRouter } from 'expo-router';
+import { View, Text, ScrollView, TouchableOpacity, FlatList, Pressable, ImageBackground, Modal, Image } from 'react-native';
+import StyleSheet from 'react-native-media-query';
+import { useRouter, Link } from 'expo-router';
+import { Divider } from 'react-native-paper';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Swiper from 'react-native-web-swiper';
@@ -11,11 +13,11 @@ import backgroundImage from '../../assets/images/sneakers_app_background.jpg';
 import Next from '../../assets/images/nextButton.png';
 import Back from '../../assets/images/backButton.png';
 import playButton from '../../assets/images/playButton.png';
-import stopButton from '../../assets/images/stopButton.png';
 import chapterTitle from '../../assets/images/chapter-6-title.png'
 import pinkPosiImage from '../../assets/images/pinkPosi.png'
 import appSlides from '../../assets/slides/appSlides';
 
+import StopPlay from '../../assets/stopPlay';
 
 const physicalactivityandnutrition = () => {
     const chapterTitleAlt = 'Physical Activity and Nutrition chapter';
@@ -181,14 +183,22 @@ const physicalactivityandnutrition = () => {
                                                     )
                                                 })
                                                 : null}
-
+                                                {slide.reference ?
+                                                    slide.reference.map((ref, id) => (
+                                                        <View key={id}>
+                                                            <View>
+                                                                < Divider style={{height: 2}}/>
+                                                            </View>
+                                                            <View>
+                                                                    <Link href='/references' style={styles.ref}>{ref.id}. {ref.cite}</Link>
+                                                            </View>
+                                                        </View>
+                                                    )) : null}
                                         </ScrollView>
                                     </View>
 
                                     <View style={styles.right}>
-                                    <TouchableOpacity style={styles.listen} onPress={stopPlay}>
-                                        <Image style={styles.playOptions} source={stopButton} accessibilityLabel='stop button' />
-                                    </TouchableOpacity>
+                                    <StopPlay/>
                                     {slide.pinkPosi ?
                                         <Pressable onPress={() => setModalVisible(true)}>
                                             <Image style={styles.navImages} source={pinkPosiImage} accessibilityLabel='visit next chapter' />
@@ -205,7 +215,7 @@ const physicalactivityandnutrition = () => {
     )
 };
 
-const styles = StyleSheet.create({
+const {ids, styles} = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -227,11 +237,16 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(255,255,255,0)'
     },
     titleImages: {
+        backgroundColor: 'rgba(255,255,255,0)',
+        marginVertical:5,
+        '@media (min-height: 320px) and (max-height: 480px)': {
         height: 80,
         width: '50%',
-        backgroundColor: 'rgba(255,255,255,0)',
-        marginVertical:5
     },
+    '@media (min-height: 481px) and (max-height: 768px)': {
+        width: '50%',
+    },
+},
     paragraph: {
         fontSize: 16,
         marginVertical: 2,
@@ -241,6 +256,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 0,
         marginBottom: 2
+    },
+    ref:{
+        fontSize: 12,
+        fontStyle:'italic',
+        color: 'blue'
     },
     image: {
         resizeMode: 'contain',
