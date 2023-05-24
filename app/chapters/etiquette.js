@@ -1,26 +1,25 @@
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet, ImageBackground, Pressable, Modal, Image } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, ImageBackground, Pressable, Modal, Image } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'expo-router';
+import StyleSheet from 'react-native-media-query';
 
 import Swiper from 'react-native-web-swiper';
 import * as Speech from 'expo-speech';
 
 import backgroundImage from '../../assets/images/sneakers_app_background.jpg';
-import Next from '../../assets/images/nextButton.png';
-import Back from '../../assets/images/backButton.png';
 import playButton from '../../assets/images/playButton.png';
-import stopButton from '../../assets/images/stopButton.png';
 import chapterTitle from '../../assets/images/chapter-4-title.png'
 import pinkPosiImage from '../../assets/images/pinkPosi.png'
 import appSlides from '../../assets/slides/appSlides';
 
 import StopPlay from '../../assets/stopPlay';
+import Heading from '../../assets/heading';
 
 const etiquette = () => {
     const chapterTitleAlt = 'etiquette chapter';
 
     const router = useRouter();
-
+    const nextChapter = () => router.push(href = '/chapters/healthandhygiene');
     const speakText = (text) => {
         const firstSlide = (text);
         Speech.speak(firstSlide);
@@ -68,18 +67,9 @@ const etiquette = () => {
             <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
 
                 {/* page header and navigation */}
-                <View style={styles.header}>
-                    <TouchableOpacity onPress={() => router.push(href = '/chapters')} >
-                        <Image style={styles.navImages} source={Back} accessibilityLabel='visit next chapter' />
-                    </TouchableOpacity>
+                <Heading nextChapter={nextChapter} chapterTitle={chapterTitle} titleAlt={chapterTitleAlt} />
 
-                    <Image style={styles.titleImages} source={chapterTitle} accessibilityLabel={chapterTitleAlt} />
-
-                    <TouchableOpacity onPress={() => router.push(href = '/chapters/healthandhygiene')} >
-                        <Image style={styles.navImages} source={Next} accessibilityLabel='visit next chapter' />
-                    </TouchableOpacity>
-                </View>
-                {/* end of page header and navigation */}
+                {/* beginning of swiper view */}
 
                 <Swiper controlsProps={{ dotsPos: 'bottom' }} onIndexChanged={(i) => { setCurrentSlide(slides[i]) }} showsButtons={true} loop={false} >
                     {slides.map((slide, id) => {
@@ -89,7 +79,7 @@ const etiquette = () => {
                                     <Image style={styles.image} source={slide.image} accessibilityLabel={slide.imageAlt} />
                                 </View>
 
-                                <View style={styles.center}>
+                                <View style={styles.center} dataSet={{ media: ids.center }}>
                                     <ScrollView>
                                         {slide.quote ? slide.quote.map((quote, index) => (
                                             <Text key={index} style={styles.boldItalic}>{quote}</Text>
@@ -174,7 +164,7 @@ const etiquette = () => {
                                 </View>
 
                                 <View style={styles.right}>
-                                    <TStopPlay/>
+                                    <StopPlay />
                                     {slide.pinkPosi ?
                                         <Pressable onPress={() => setModalVisible(true)}>
                                             <Image style={styles.navImages} source={pinkPosiImage} accessibilityLabel='visit next chapter' />
@@ -190,7 +180,7 @@ const etiquette = () => {
     )
 };
 
-const styles = StyleSheet.create({
+const {ids, styles} = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -201,19 +191,9 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
     },
-    header: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        marginBottom: 0
-    },
     navImages: {
         height: 80,
         width: 80,
-        backgroundColor: 'rgba(255,255,255,0)'
-    },
-    titleImages: {
-        height: 80,
-        width: '50%',
         backgroundColor: 'rgba(255,255,255,0)'
     },
     paragraph: {
@@ -293,9 +273,24 @@ const styles = StyleSheet.create({
         width: '30%'
     },
     center: {
-        flex: 1,
         width: '50%',
-        height: '100%'
+        justifyContent: 'center',
+        '@media (min-height: 320px) and (max-height: 480px)': {
+            height: '100%',
+            justifyContent: 'center',
+        },
+        '@media (min-height: 481px) and (max-height: 768px)': {
+            height: '80%',
+            justifyContent: 'center',
+        },
+        '@media (min-height: 769px) and (max-height: 1024px)': {
+            height: '70%',
+            justifyContent: 'center',
+        },
+        '@media (min-height: 1025px) and (max-height: 1200px)': {
+            height: '50%',
+            justifyContent: 'center',
+        }
     },
     right: {
         alignItems: 'center',

@@ -10,31 +10,28 @@ import * as Speech from 'expo-speech';
 import { Table, Row, Rows } from 'react-native-table-component';
 
 import backgroundImage from '../../assets/images/sneakers_app_background.jpg';
-import Next from '../../assets/images/nextButton.png';
-import Back from '../../assets/images/backButton.png';
 import playButton from '../../assets/images/playButton.png';
 import chapterTitle from '../../assets/images/chapter-6-title.png'
 import pinkPosiImage from '../../assets/images/pinkPosi.png'
 import appSlides from '../../assets/slides/appSlides';
 
-import StopPlay from '../../assets/stopPlay';
+
+import StopPlay from '../../assets//stopPlay';
+import Heading from '../../assets/heading';
 
 const physicalactivityandnutrition = () => {
     const chapterTitleAlt = 'Physical Activity and Nutrition chapter';
 
     const router = useRouter();
+    const nextChapter = () => router.push(href = '/chapters/yourbody');
 
     const speakText = (text) => {
         const firstSlide = (text);
         Speech.speak(firstSlide);
     };
 
-    const stopPlay = () => {
-        Speech.stop();
-    };
-
     const slides = appSlides.physicalActivitySlides;
-   
+
 
     const [modalVisible, setModalVisible] = useState(false);
 
@@ -57,37 +54,30 @@ const physicalactivityandnutrition = () => {
 
     useEffect(() => {
         updateModal()
-    }, [setCurrentSlide]) 
+    }, [setCurrentSlide])
 
     return (
         <View style={styles.container}>
-        <Modal
-            animationType="fade"
-            transparent={true}
-            visible={modalVisible}
-            supportedOrientations={["landscape"]}>
+            <Modal
+                animationType="fade"
+                transparent={true}
+                visible={modalVisible}
+                supportedOrientations={["landscape"]}>
 
-            <View style={styles.modalView}>
-                {updateModal()}
-            </View>
+                <View style={styles.modalView}>
+                    {updateModal()}
+                </View>
 
-        </Modal>
+            </Modal>
 
             <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
 
                 {/* page header and navigation */}
-                <View style={styles.header}>
-                    <TouchableOpacity onPress={() => router.push(href = '/chapters')} >
-                        <Image style={styles.navImages} source={Back} accessibilityLabel='visit next chapter' />
-                    </TouchableOpacity>
 
-                    <Image style={styles.titleImages} source={chapterTitle} accessibilityLabel={chapterTitleAlt} />
+                <Heading nextChapter={nextChapter} chapterTitle={chapterTitle} titleAlt={chapterTitleAlt} />
 
-                    <TouchableOpacity  onPress={() => router.push(href = '/chapters/yourbody')} >
-                        <Image style={styles.navImages} source={Next} accessibilityLabel='visit next chapter' />
-                    </TouchableOpacity>
-                </View>
-                {/* end of page header and navigation */}
+                {/* beginning of swiper view */}
+
                 <Swiper controlsProps={{ dotsPos: 'bottom' }} onIndexChanged={(i) => { setCurrentSlide(slides[i]) }} showsButtons={true} loop={false} >
                     {slides.map((slide, id) => {
                         return (
@@ -96,116 +86,116 @@ const physicalactivityandnutrition = () => {
                                     <Image style={styles.image} source={slide.image} accessibilityLabel={slide.imageAlt} />
                                 </View>
 
-                                    <View style={styles.center}>
-                                        <ScrollView>
-                                            {slide.summary ? slide.summary.map((paragraph, index) => (
-                                                <View style={styles.row} key={index}>
-                                                    <View>
-                                                        <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
+                                <View style={styles.center} dataSet={{ media: ids.center }}>
+                                    <ScrollView>
+                                        {slide.summary ? slide.summary.map((paragraph, index) => (
+                                            <View style={styles.row} key={index}>
+                                                <View>
+                                                    <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
                                                         <Image style={styles.playOptions} source={playButton} accessibilityLabel='stop button' />
-                                                        </TouchableOpacity>
-                                                    </View>
-                                                    {paragraph ? <Text style={styles.paragraph}>{paragraph}</Text> : null}
+                                                    </TouchableOpacity>
                                                 </View>
-                                            )) : null}
+                                                {paragraph ? <Text style={styles.paragraph}>{paragraph}</Text> : null}
+                                            </View>
+                                        )) : null}
 
 
-                                            {slide.heading ? <Text style={styles.boldUnderline}>{slide.heading}</Text> : null}
+                                        {slide.heading ? <Text style={styles.boldUnderline}>{slide.heading}</Text> : null}
 
-                                            {slide.bullets ? slide.bullets.map((point, id) => {
-                                                return (
-                                                    <View key={id}>
+                                        {slide.bullets ? slide.bullets.map((point, id) => {
+                                            return (
+                                                <View key={id}>
 
-                                                        {point.summary ? point.summary.map((paragraph, index) => (
-                                                            <View style={styles.row} key={index}>
-                                                                <View>
-                                                                    <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
-                                                                    <Image style={styles.playOptions} source={playButton} accessibilityLabel='stop button' />
-                                                                    </TouchableOpacity>
-                                                                </View>
-                                                                <Text style={styles.paragraph} key={index}>{paragraph}</Text>
-                                                            </View>
-                                                        )) : null}
-
-                                                        {point.title ? <Text style={styles.bold}>{point.title}</Text> : null}
-
-                                                        {point.tableData ?
-                                                            <Table style={styles.tableContent} borderStyle={styles.tableBorder}>
-                                                                <Rows data={point.tableData} textStyle={{ paddingHorizontal: 5, fontSize: 16 }} />
-                                                            </Table>
-                                                            : null}
-
-                                                        {point.bullet ? point.bullet.map((paragraph, index) => {
-                                                            return (
-                                                                <View style={styles.row} key={index}>
-
-                                                                    <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
-                                                                    <Image style={styles.playOptions} source={playButton} accessibilityLabel='stop button' />
-                                                                    </TouchableOpacity>
-                                                                    <View style={styles.list}>
-                                                                        <Text style={styles.bullets}>{'\u2022'}</Text>
-                                                                        <Text style={styles.listData}>{paragraph}</Text>
-                                                                    </View>
-                                                                </View>
-                                                            )
-                                                        }) : null}
-
-                                                        {point.paragraph ? point.paragraph.map((paragraph, index) => (
-                                                            <View style={styles.row} key={index}>
+                                                    {point.summary ? point.summary.map((paragraph, index) => (
+                                                        <View style={styles.row} key={index}>
+                                                            <View>
                                                                 <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
-                                                                <Image style={styles.playOptions} source={playButton} accessibilityLabel='stop button' />
+                                                                    <Image style={styles.playOptions} source={playButton} accessibilityLabel='stop button' />
                                                                 </TouchableOpacity>
-                                                                <Text key={index} style={styles.paragraph}>{paragraph}</Text>
                                                             </View>
-                                                        )) : null}
-                                                    </View>
-                                                )
-                                            }) : null}
-
-                                            {slide.numberList ?
-                                                slide.numberList.map((point, id) => {
-                                                    return (
-                                                        <View key={id}>
-                                                            <View style={styles.row}>
-                                                                <TouchableOpacity style={styles.listen} onPress={() => { speakText(point.bullet) }}>
-                                                                <Image style={styles.playOptions} source={playButton} accessibilityLabel='stop button' />
-                                                                </TouchableOpacity>
-                                                                <View style={styles.list}>
-                                                                    <Text style={styles.bulletNumbers}>{point.id}.</Text>
-
-                                                                    <Text style={styles.listData}>
-                                                                        {point.bullet}</Text>
-                                                                </View>
-
-                                                            </View>
-
-                                                        </View>
-                                                    )
-                                                })
-                                                : null}
-                                                {slide.reference ?
-                                                    slide.reference.map((ref, id) => (
-                                                        <View key={id}>
-                                                            <View>
-                                                                < Divider style={{height: 2}}/>
-                                                            </View>
-                                                            <View>
-                                                                    <Link href='/references' style={styles.ref}>{ref.id}. {ref.cite}</Link>
-                                                            </View>
+                                                            <Text style={styles.paragraph} key={index}>{paragraph}</Text>
                                                         </View>
                                                     )) : null}
-                                        </ScrollView>
-                                    </View>
 
-                                    <View style={styles.right}>
-                                    <StopPlay/>
+                                                    {point.title ? <Text style={styles.bold}>{point.title}</Text> : null}
+
+                                                    {point.tableData ?
+                                                        <Table style={styles.tableContent} borderStyle={styles.tableBorder}>
+                                                            <Rows data={point.tableData} textStyle={{ paddingHorizontal: 5, fontSize: 16 }} />
+                                                        </Table>
+                                                        : null}
+
+                                                    {point.bullet ? point.bullet.map((paragraph, index) => {
+                                                        return (
+                                                            <View style={styles.row} key={index}>
+
+                                                                <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
+                                                                    <Image style={styles.playOptions} source={playButton} accessibilityLabel='stop button' />
+                                                                </TouchableOpacity>
+                                                                <View style={styles.list}>
+                                                                    <Text style={styles.bullets}>{'\u2022'}</Text>
+                                                                    <Text style={styles.listData}>{paragraph}</Text>
+                                                                </View>
+                                                            </View>
+                                                        )
+                                                    }) : null}
+
+                                                    {point.paragraph ? point.paragraph.map((paragraph, index) => (
+                                                        <View style={styles.row} key={index}>
+                                                            <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
+                                                                <Image style={styles.playOptions} source={playButton} accessibilityLabel='stop button' />
+                                                            </TouchableOpacity>
+                                                            <Text key={index} style={styles.paragraph}>{paragraph}</Text>
+                                                        </View>
+                                                    )) : null}
+                                                </View>
+                                            )
+                                        }) : null}
+
+                                        {slide.numberList ?
+                                            slide.numberList.map((point, id) => {
+                                                return (
+                                                    <View key={id}>
+                                                        <View style={styles.row}>
+                                                            <TouchableOpacity style={styles.listen} onPress={() => { speakText(point.bullet) }}>
+                                                                <Image style={styles.playOptions} source={playButton} accessibilityLabel='stop button' />
+                                                            </TouchableOpacity>
+                                                            <View style={styles.list}>
+                                                                <Text style={styles.bulletNumbers}>{point.id}.</Text>
+
+                                                                <Text style={styles.listData}>
+                                                                    {point.bullet}</Text>
+                                                            </View>
+
+                                                        </View>
+
+                                                    </View>
+                                                )
+                                            })
+                                            : null}
+                                        {slide.reference ?
+                                            slide.reference.map((ref, id) => (
+                                                <View key={id}>
+                                                    <View>
+                                                        < Divider style={{ height: 2 }} />
+                                                    </View>
+                                                    <View>
+                                                        <Link href='/references' style={styles.ref}>{ref.id}. {ref.cite}</Link>
+                                                    </View>
+                                                </View>
+                                            )) : null}
+                                    </ScrollView>
+                                </View>
+
+                                <View style={styles.right}>
+                                    <StopPlay />
                                     {slide.pinkPosi ?
                                         <Pressable onPress={() => setModalVisible(true)}>
                                             <Image style={styles.navImages} source={pinkPosiImage} accessibilityLabel='visit next chapter' />
                                         </Pressable> : null}
 
                                 </View>
-                                </View>
+                            </View>
                         )
                     })}
 
@@ -215,7 +205,7 @@ const physicalactivityandnutrition = () => {
     )
 };
 
-const {ids, styles} = StyleSheet.create({
+const { ids, styles } = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -226,27 +216,11 @@ const {ids, styles} = StyleSheet.create({
         height: '100%',
         width: '100%',
     },
-    header: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        marginBottom: 0
-    },
     navImages: {
         height: 80,
         width: 80,
         backgroundColor: 'rgba(255,255,255,0)'
     },
-    titleImages: {
-        backgroundColor: 'rgba(255,255,255,0)',
-        marginVertical:5,
-        '@media (min-height: 320px) and (max-height: 480px)': {
-        height: 80,
-        width: '50%',
-    },
-    '@media (min-height: 481px) and (max-height: 768px)': {
-        width: '50%',
-    },
-},
     paragraph: {
         fontSize: 16,
         marginVertical: 2,
@@ -257,9 +231,9 @@ const {ids, styles} = StyleSheet.create({
         marginTop: 0,
         marginBottom: 2
     },
-    ref:{
+    ref: {
         fontSize: 12,
-        fontStyle:'italic',
+        fontStyle: 'italic',
         color: 'blue'
     },
     image: {
@@ -309,7 +283,7 @@ const {ids, styles} = StyleSheet.create({
     posiAffirm: {
         flex: 1,
         height: '100%',
-        width:600,
+        width: 600,
         resizeMode: 'contain'
     },
     modalView: {
@@ -331,7 +305,23 @@ const {ids, styles} = StyleSheet.create({
     },
     center: {
         width: '50%',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        '@media (min-height: 320px) and (max-height: 480px)': {
+            height: '100%',
+            justifyContent: 'center',
+        },
+        '@media (min-height: 481px) and (max-height: 768px)': {
+            height: '80%',
+            justifyContent: 'center',
+        },
+        '@media (min-height: 769px) and (max-height: 1024px)': {
+            height: '70%',
+            justifyContent: 'center',
+        },
+        '@media (min-height: 1025px) and (max-height: 1200px)': {
+            height: '50%',
+            justifyContent: 'center',
+        }
     },
     right: {
         alignItems: 'center',
@@ -343,7 +333,7 @@ const {ids, styles} = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         alignContent: 'center',
-        marginBottom:35
+        marginBottom: 35
     },
 });
 

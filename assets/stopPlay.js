@@ -5,7 +5,7 @@ import * as Speech from 'expo-speech';
 import stopButton from './images/stopButton.png';
 
 
-const stopPlay = () => {
+const StopPlay = () => {
 
     const stopPlay = () => {
         Speech.stop();
@@ -19,7 +19,7 @@ const stopPlay = () => {
     )
 }
 
-export default stopPlay
+export default StopPlay
 
 const styles = StyleSheet.create({
     right: {

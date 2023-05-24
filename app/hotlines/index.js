@@ -1,11 +1,11 @@
-import { View, Image, ImageBackground, TouchableOpacity, Text, FlatList, ScrollView, StyleSheet } from 'react-native';
+import { View, Image, ImageBackground, TouchableOpacity, Text, FlatList, ScrollView } from 'react-native';
 import React from 'react';
 import Popover from 'react-native-popover-view';
 import { Link, useRouter } from "expo-router";
 import Swiper from 'react-native-web-swiper';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Speech from 'expo-speech';
-
+import StyleSheet from 'react-native-media-query';
 
 import backgroundImage from '../../assets/images/sneakers_app_background.jpg';
 import websitesButton from '../../assets/images/websites.png';
@@ -13,7 +13,7 @@ import chapterTitle from '../../assets/images/hotlinesTitle.png';
 import backButton from '../../assets/images/backButton.png';
 import hotlinesThumbnail from '../../assets/images/hotlinesThumbnail.png';
 
-import StopPlay from '../../assets/stopPlay';
+import StopPlay from '../../assets//stopPlay';
 
 import hotlineSlides from '../../assets/slides/hotlineSlides';
 
@@ -40,7 +40,7 @@ const hotlines = () => {
                         <Image style={styles.navImages} source={backButton} accessibilityLabel='visit next chapter' />
                     </TouchableOpacity>
 
-                    <Image style={styles.titleImages} source={chapterTitle} accessibilityLabel={chapterTitleAlt} />
+                    <Image style={styles.titleImages} dataSet={{media: ids.titleImages}} source={chapterTitle} accessibilityLabel={chapterTitleAlt} />
 
                     <TouchableOpacity onPress={() => {
                         router.push(href = '/websites')
@@ -110,7 +110,7 @@ const hotlines = () => {
 }
 
 
-const styles = StyleSheet.create({
+const {ids, styles} = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -132,9 +132,15 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(255,255,255,0)'
     },
     titleImages: {
-        height: 80,
-        width: '50%',
-        backgroundColor: 'rgba(255,255,255,0)'
+        backgroundColor: 'rgba(255,255,255,0)',
+        marginVertical: 5,
+        '@media (min-height: 320px) and (max-height: 480px)': {
+            height: 80,
+            width: '50%',
+        },
+        '@media (min-height: 481px) and (max-height: 768px)': {
+            width: '50%',
+        },
     },
     image: {
         resizeMode: 'contain',
@@ -145,9 +151,24 @@ const styles = StyleSheet.create({
         width: '30%'
     },
     center: {
-        flex: 1,
         width: '50%',
-        height: '100%'
+        justifyContent: 'center',
+        '@media (min-height: 320px) and (max-height: 480px)': {
+            height: '100%',
+            justifyContent: 'center',
+        },
+        '@media (min-height: 481px) and (max-height: 768px)': {
+            height: '80%',
+            justifyContent: 'center',
+        },
+        '@media (min-height: 769px) and (max-height: 1024px)': {
+            height: '70%',
+            justifyContent: 'center',
+        },
+        '@media (min-height: 1025px) and (max-height: 1200px)': {
+            height: '50%',
+            justifyContent: 'center',
+        }
     },
     right: {
         alignItems: 'center',

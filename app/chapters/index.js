@@ -11,7 +11,8 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 import { useState } from 'react';
 
 import backgroundImage from '../../assets/images/overlay_background.png';
-import StopPlay from '../../assets/stopPlay';
+
+import StopPlay from '../../assets//stopPlay';
 
 import chapterSlides from '../../assets/slides/chapterSlides';
 
@@ -125,13 +126,13 @@ const chapters = () => {
                             {slides.map((slide, id) => {
                                 return (
                                     <View key={id} style={styles.content}>
-                                        <View style={styles.left}>
+                                        <View style={styles.left} media={{media: ids.left}}>
                                             <Image style={styles.image} source={slide.thumbnail} accessibilityLabel={slide.thumbnail_alt} />
                                         </View>
 
-                                        <TouchableOpacity style={styles.center} onPress={() => router.push({ pathname: slide.page })} >
+                                        <TouchableOpacity style={styles.center} media={{media: ids.center}} onPress={() => router.push({ pathname: slide.page })} >
                                             <Text style={styles.h1}>Chapter {slide.id}</Text>
-                                            <Image style={styles.descriptionTitle} source={slide.title} accessibilityLabel={slide.chapterTitleAlt} />
+                                            <Image style={styles.descriptionTitle} dataSet={{media: ids.descriptionTitle}} source={slide.title} accessibilityLabel={slide.chapterTitleAlt} />
                                             <Text style={styles.paragraph}>{slide.description}</Text>
                                         </TouchableOpacity>
 
@@ -181,9 +182,15 @@ const { ids, styles } = StyleSheet.create({
         backgroundColor: 'rgba(255,255,255,0)'
     },
     titleImages: {
-        height: 80,
-        width: '50%',
-        backgroundColor: 'rgba(255,255,255,0)'
+        backgroundColor: 'rgba(255,255,255,0)',
+        marginVertical: 5,
+        '@media (min-height: 320px) and (max-height: 480px)': {
+            height: 80,
+            width: '50%',
+        },
+        '@media (min-height: 481px) and (max-height: 768px)': {
+            width: '50%',
+        },
     },
     descriptionTitle: {
         height: '30%',
@@ -218,7 +225,10 @@ const { ids, styles } = StyleSheet.create({
         height: 24
     },
     left: {
-        width: '30%'
+        width: '30%',
+        '@media (min-height: 769px) and (max-height: 1024px)': {
+           width:'15%'
+        },
     },
     center: {
         flex: 1,
@@ -227,10 +237,13 @@ const { ids, styles } = StyleSheet.create({
         alignItems: 'center',
         width: '50%',
         height: '100%',
+        '@media (min-height: 769px) and (max-height: 1024px)': {
+           width:'70%'
+        },
     },
     right: {
         alignItems: 'center',
-        width: '20%',
+        width: '15%',
     },
     content: {
         flex: 1,

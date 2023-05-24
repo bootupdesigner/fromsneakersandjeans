@@ -1509,31 +1509,31 @@ const appSlides = {
             numberList: [
                 {
                     id: '1',
-                    bullet: [`Start out like you would start a new friendship. Be open, honest, respectful, and have good communication. Get to know a person by talking on the phone or at school before you go out for the first time.`]
+                    bullet: `Start out like you would start a new friendship. Be open, honest, respectful, and have good communication. Get to know a person by talking on the phone or at school before you go out for the first time.`
                 },
                 {
                     id: '2',
-                    bullet: [`Spend time away from him. I know this is challenging, but it is an important step. You want to spend some time together and some time apart, because this allows you to be with your boyfriend and your family and other friends. `]
+                    bullet: `Spend time away from him. I know this is challenging, but it is an important step. You want to spend some time together and some time apart, because this allows you to be with your boyfriend and your family and other friends. `
                 },
                 {
                     id: '3',
-                    bullet: [`NEVER feel pressured to do something that you don’t want to do. The other person should always respect your right to say no to anything that makes you feel uncomfortable. It is important that you are both clear with each other about what each of you will and will not do. Talk about your boundaries ahead of time, so that you aren’t pressured on the spot.`]
+                    bullet: `NEVER feel pressured to do something that you don’t want to do. The other person should always respect your right to say no to anything that makes you feel uncomfortable. It is important that you are both clear with each other about what each of you will and will not do. Talk about your boundaries ahead of time, so that you aren’t pressured on the spot.`
                 },
                 {
                     id: '4',
-                    bullet: [`Go out with a group of friends to a public place the first few times you spend time together.`]
+                    bullet: `Go out with a group of friends to a public place the first few times you spend time together.`
                 },
                 {
                     id: '5',
-                    bullet: [`Be clear with the other person about what you feel comfortable doing and what time your parents/guardians want you to be home.`]
+                    bullet: `Be clear with the other person about what you feel comfortable doing and what time your parents/guardians want you to be home.`
                 },
                 {
                     id: '6',
-                    bullet: [`Plan fun activities like going to the movies, a picnic, the mall, or for a walk.`]
+                    bullet: `Plan fun activities like going to the movies, a picnic, the mall, or for a walk.`
                 },
                 {
                     id: '7',
-                    bullet: [`Tell at least one friend and your parents/guardians who you are going out with and where you are going. Be sure to also tell them how to reach you.`]
+                    bullet: `Tell at least one friend and your parents/guardians who you are going out with and where you are going. Be sure to also tell them how to reach you.`
                 },
             ],
             reference: [
@@ -1557,7 +1557,6 @@ const appSlides = {
             bullets: [
                 {
                     heading: 'Virgin is not a bad word; it’s a BEAUTIFUL word. And it’s one you should be proud to say.',
-                    bullet: [],
                 }
             ],
             image: Thumbnail6,
@@ -1646,15 +1645,15 @@ const appSlides = {
             numberList: [
                 {
                     id: '1',
-                    bullet: [`Hormonal birth control pill`]
+                    bullet: `Hormonal birth control pill`
                 },
                 {
                     id: '2',
-                    bullet: [`Hormonal skin patch`]
+                    bullet: `Hormonal skin patch`
                 },
                 {
                     id: '3',
-                    bullet: [`Hormone injection`]
+                    bullet: `Hormone injection`
                 },
             ],
             paragraph: [`Always use these methods with a condom. Before you have sex, please see a doctor about the best birth control method for you. This is an especially important step if you have a medical condition, as some medicines may not help but harm.`],
@@ -1699,51 +1698,51 @@ const appSlides = {
             numberList: [
                 {
                     id: '1',
-                    bullet: [`The best sex is NO SEX. And abstinence is your best protection against disease.`]
+                    bullet: `The best sex is NO SEX. And abstinence is your best protection against disease.`
                 },
                 {
                     id: '2',
-                    bullet: [`You can get a sexually transmitted infection (STI) or HIV if you have unsafe sex (anal, oral or vaginal).`]
+                    bullet: `You can get a sexually transmitted infection (STI) or HIV if you have unsafe sex (anal, oral or vaginal).`
                 },
                 {
                     id: '3',
-                    bullet: [`YOU put a value on your life and your body.`]
+                    bullet: `YOU put a value on your life and your body.`
                 },
                 {
                     id: '4',
-                    bullet: [`Virgin is not a bad word; it’s a BEAUTIFUL word. And it’s one you should be proud to say. `]
+                    bullet: `Virgin is not a bad word; it’s a BEAUTIFUL word. And it’s one you should be proud to say. `
                 },
                 {
                     id: '5',
-                    bullet: [`Exposure to an STI can occur anytime a person has sex or close contact with the genitals, mouth or rectum of another person.`]
+                    bullet: `Exposure to an STI can occur anytime a person has sex or close contact with the genitals, mouth or rectum of another person.`
                 },
                 {
                     id: '6',
-                    bullet: [`Most STIs can be treated and cured, but some, such as HIV and syphilis, can cause death.`]
+                    bullet: `Most STIs can be treated and cured, but some, such as HIV and syphilis, can cause death.`
                 },
                 {
                     id: '7',
-                    bullet: [`The only way to prevent pregnancy and/or getting an STI or HIV is to practice abstinence (no sex of any kind).`]
+                    bullet: `The only way to prevent pregnancy and/or getting an STI or HIV is to practice abstinence (no sex of any kind).`
                 },
                 {
                     id: '8',
-                    bullet: [`If you are already having sex or planning to have sex, always use a condom.`]
+                    bullet: `If you are already having sex or planning to have sex, always use a condom.`
                 },
                 {
                     id: '9',
-                    bullet: [`You CAN get pregnant the first time.`]
+                    bullet: `You CAN get pregnant the first time.`
                 },
                 {
                     id: '10',
-                    bullet: [`You CAN get an STI the first time.`]
+                    bullet: `You CAN get an STI the first time.`
                 },
                 {
                     id: '11',
-                    bullet: [`You CAN get HIV the first time.`]
+                    bullet: `You CAN get HIV the first time.`
                 },
                 {
                     id: '12',
-                    bullet: [`Make sure you are safe every time.`]
+                    bullet: `Make sure you are safe every time.`
                 },
             ],
             image: Thumbnail6,
