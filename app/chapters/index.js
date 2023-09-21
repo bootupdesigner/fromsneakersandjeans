@@ -19,6 +19,7 @@ import chapterSlides from '../../assets/slides/chapterSlides';
 import websitesButton from '../../assets/images/websites.png'
 import hotlinesButton from '../../assets/images/hotlines.png'
 import chapterTitle from '../../assets/images/chaptersTitle.png'
+import Avatar from '../../assets/Avatar';
 
 import tour1 from '../../assets/images/tour1.png';
 import tour5 from '../../assets/images/tour2.png';
@@ -126,13 +127,12 @@ const chapters = () => {
                             {slides.map((slide, id) => {
                                 return (
                                     <View key={id} style={styles.content}>
-                                        <View style={styles.left} media={{media: ids.left}}>
-                                            <Image style={styles.image} source={slide.thumbnail} accessibilityLabel={slide.thumbnail_alt} />
-                                        </View>
 
-                                        <TouchableOpacity style={styles.center} media={{media: ids.center}} onPress={() => router.push({ pathname: slide.page })} >
+                                        <Avatar source={slide.thumbnail} alt={slide.thumbnail_alt} />
+
+                                        <TouchableOpacity style={styles.center} media={{ media: ids.center }} onPress={() => router.push({ pathname: slide.page })} >
                                             <Text style={styles.h1}>Chapter {slide.id}</Text>
-                                            <Image style={styles.descriptionTitle} dataSet={{media: ids.descriptionTitle}} source={slide.title} accessibilityLabel={slide.chapterTitleAlt} />
+                                            <Image style={styles.descriptionTitle} dataSet={{ media: ids.descriptionTitle }} source={slide.title} accessibilityLabel={slide.chapterTitleAlt} />
                                             <Text style={styles.paragraph}>{slide.description}</Text>
                                         </TouchableOpacity>
 
@@ -227,7 +227,7 @@ const { ids, styles } = StyleSheet.create({
     left: {
         width: '30%',
         '@media (min-height: 769px) and (max-height: 1024px)': {
-           width:'15%'
+            width: '15%'
         },
     },
     center: {
@@ -238,7 +238,7 @@ const { ids, styles } = StyleSheet.create({
         width: '50%',
         height: '100%',
         '@media (min-height: 769px) and (max-height: 1024px)': {
-           width:'70%'
+            width: '70%'
         },
     },
     right: {

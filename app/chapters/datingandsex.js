@@ -74,18 +74,16 @@ const datingandsex = () => {
 
                 <Heading nextChapter={nextChapter} chapterTitle={chapterTitle} titleAlt={chapterTitleAlt} />
 
-{/* beginning of swiper view */}
+                {/* beginning of swiper view */}
 
                 <Swiper controlsProps={{ dotsPos: 'bottom' }} onIndexChanged={(i) => { setCurrentSlide(slides[i]) }} showsButtons={true} loop={false} >
                     {slides.map((slide, id) => {
                         return (
                             <View key={id} style={styles.content}>
-                                <View style={styles.left}>
-                                    <Image style={styles.image} source={slide.image} accessibilityLabel={slide.imageAlt} />
-                                </View>
+                                <Avatar source={slide.image} alt={slide.imageAlt} />
 
                                 <View style={styles.center} dataSet={{ media: ids.center }}>
-                                    <ScrollView>
+                                    <ScrollView showsVerticalScrollIndicator={false}>
                                         {slide.heading ? <Text style={styles.boldUnderline}>{slide.heading}</Text> : null}
 
                                         {slide.summary ?
@@ -203,7 +201,7 @@ const datingandsex = () => {
     )
 }
 
-const {ids, styles} = StyleSheet.create({
+const { ids, styles } = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',

@@ -50,7 +50,7 @@ const privacypolicy = () => {
                         </View>
 
                         <View style={styles.center} dataSet={{ media: ids.center }}>
-                            <ScrollView>
+                            <ScrollView showsVerticalScrollIndicator={false}>
                                 <Text style={styles.paragraph}>Notary Works (&quot;Notary Works&quot;) values its users&#39; privacy. This Privacy Policy (&quot;Policy&quot;) will help you understand
                                     how we collect and use personal information from those who visit our website, download our app, or make use of
                                     our online facilities and services, and what we will and will not do with the information we collect. Our Policy has

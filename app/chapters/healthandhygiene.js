@@ -15,7 +15,8 @@ import appSlides from '../../assets/slides/appSlides';
 
 import StopPlay from '../../assets//stopPlay';
 import Heading from '../../assets/heading';
-
+import Avatar from '../../assets/Avatar';
+import BulletPoints from '../../assets/bulletPoints';
 const healthandhygiene = () => {
     function reference(heading) {
         const refKey = '\u00b9';
@@ -104,7 +105,7 @@ const healthandhygiene = () => {
                                 </View>
 
                                 <View style={styles.center} dataSet={{ media: ids.center }}>
-                                    <ScrollView>
+                                    <ScrollView showsVerticalScrollIndicator={false}>
                                         {slide.summary ? slide.summary.map((paragraph, index) => (
                                             <View style={styles.row} key={index}>
                                                 <View>
@@ -116,7 +117,7 @@ const healthandhygiene = () => {
                                             </View>
                                         )) : null}
 
-                                        {slide.heading ? <Text style={styles.boldUnderline}>{reference(slide.heading)}</Text> : null}
+                                        {slide.heading ? <Text style={styles.boldUnderline}>{(slide.heading)}</Text> : null}
 
                                         {slide.bullets ? slide.bullets.map((point, id) => {
                                             return (
@@ -141,20 +142,7 @@ const healthandhygiene = () => {
                                                         </Table>
                                                         : null}
 
-                                                    {point.bullet ? point.bullet.map((paragraph, index) => {
-                                                        return (
-                                                            <View style={styles.row} key={index}>
-
-                                                                <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
-                                                                    <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
-                                                                </TouchableOpacity>
-                                                                <View style={styles.list}>
-                                                                    <Text style={styles.bullets}>{'\u2022'}</Text>
-                                                                    <Text style={styles.listData}>{paragraph}</Text>
-                                                                </View>
-                                                            </View>
-                                                        )
-                                                    }) : null}
+                                                    {point.bullet ? point.bullet.map((paragraph, index) => <BulletPoints key={index} paragraph={paragraph} />) : null}
 
                                                     {point.paragraph ? point.paragraph.map((paragraph, index) => (
                                                         <View style={styles.row} key={index}>

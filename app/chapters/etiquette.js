@@ -14,6 +14,11 @@ import appSlides from '../../assets/slides/appSlides';
 
 import StopPlay from '../../assets/stopPlay';
 import Heading from '../../assets/heading';
+import Avatar from '../../assets/Avatar';
+import Paragraphs from '../../assets/paragraphs';
+import BulletPoints from '../../assets/bulletPoints';
+import NumberList from '../../assets/numberList';
+import BoldUnderlineHeading from '../../assets/boldUnderlineHeading';
 
 const etiquette = () => {
     const chapterTitleAlt = 'etiquette chapter';
@@ -75,42 +80,26 @@ const etiquette = () => {
                     {slides.map((slide, id) => {
                         return (
                             <View key={id} style={styles.content}>
-                                <View style={styles.left}>
-                                    <Image style={styles.image} source={slide.image} accessibilityLabel={slide.imageAlt} />
-                                </View>
+                                <Avatar source={slide.image} alt={slide.imageAlt} />
 
                                 <View style={styles.center} dataSet={{ media: ids.center }}>
-                                    <ScrollView>
+                                    <ScrollView showsVerticalScrollIndicator={false}>
                                         {slide.quote ? slide.quote.map((quote, index) => (
                                             <Text key={index} style={styles.boldItalic}>{quote}</Text>
                                         )) : null}
 
-                                        {slide.summary ? slide.summary.map((paragraph, index) => (
-                                            <View style={styles.row} key={index}>
-                                                <View>
-                                                    <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
-                                                        <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
-                                                    </TouchableOpacity>
-                                                </View>
-                                                {paragraph ? <Text style={styles.paragraph}>{paragraph}</Text> : null}
-                                            </View>
-                                        )) : null}
+                                        {slide.summary ? slide.summary.map((paragraph, index) => <Paragraphs key={index} paragraph={paragraph} />) : null}
 
 
-                                        {slide.heading ? <Text style={styles.boldUnderline}>{slide.heading}</Text> : null}
+                                        {slide.heading ? <BoldUnderlineHeading slide={slide} /> : null}
 
                                         {slide.numberList ?
-                                            slide.numberList.map((point, id) => (
-                                                <View style={styles.row} key={id}>
-                                                    <TouchableOpacity style={styles.listen} onPress={() => { speakText(point.id + point.bullet) }}>
-                                                        <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
-                                                    </TouchableOpacity>
+                                            slide.numberList.map((point, index) => (
+                                                <View key={index}>
 
-                                                    <View style={styles.list}>
-                                                        <Text style={styles.bulletNumbers}>{point.id}.</Text>
-                                                        <Text style={styles.listData}>{point.bullet}</Text>
-
-                                                    </View>
+                                                    {point.bullet ? point.bullet.map((paragraph, id) =>
+                                                        <NumberList key={id} paragraph={paragraph} number={point} />
+                                                    ) : null}
                                                 </View>
                                             )) : null}
 
@@ -119,44 +108,15 @@ const etiquette = () => {
                                                 <View key={id}>
 
 
-                                                    {point.summary ? point.summary.map((paragraph, index) => (
-                                                        <View style={styles.row} key={index}>
-                                                            <View>
-                                                                <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
-                                                                    <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
-                                                                </TouchableOpacity>
-                                                            </View>
-                                                            <Text style={styles.paragraph} key={index}>{paragraph}</Text>
-                                                        </View>
-                                                    )) : null}
+                                                    {point.summary ? point.summary.map((paragraph, index) => <Paragraphs key={index} paragraph={paragraph} />) : null}
 
                                                     {point.title ? <Text style={styles.bold}>{point.title}</Text> : null}
 
-                                                    {point.bullet ? point.bullet.map((paragraph, index) => {
-                                                        return (
-                                                            <View style={styles.row} key={index}>
-
-                                                                <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
-                                                                    <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
-                                                                </TouchableOpacity>
-                                                                <View style={styles.list}>
-                                                                    <Text style={styles.bullets}>{'\u2022'}</Text>
-                                                                    <Text style={styles.listData}>{paragraph}</Text>
-                                                                </View>
-                                                            </View>
-                                                        )
-                                                    }) : null}
+                                                    {point.bullet ? point.bullet.map((paragraph, index) => <BulletPoints key={index} paragraph={paragraph} />) : null}
                                                     {point.tableSetting ?
                                                         <Image style={styles.image} source={point.tableSetting} accessibilityLabel={point.tableSettingAlt} />
                                                         : null}
-                                                    {point.paragraph ? point.paragraph.map((paragraph, index) => (
-                                                        <View style={styles.row} key={index}>
-                                                            <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
-                                                                <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
-                                                            </TouchableOpacity>
-                                                            <Text key={index} style={styles.paragraph}>{paragraph}</Text>
-                                                        </View>
-                                                    )) : null}
+                                                    {point.paragraph ? point.paragraph.map((paragraph, index) => <Paragraphs key={index} paragraph={paragraph} />) : null}
                                                 </View>
                                             )
                                         }) : null}
@@ -180,7 +140,7 @@ const etiquette = () => {
     )
 };
 
-const {ids, styles} = StyleSheet.create({
+const { ids, styles } = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -223,6 +183,7 @@ const {ids, styles} = StyleSheet.create({
     },
     list: {
         flexDirection: 'row',
+        width: '80%'
     },
     bullets: {
         marginVertical: 5

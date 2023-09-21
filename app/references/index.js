@@ -92,7 +92,7 @@ const references = () => {
             </View>
 
             <View style={styles.center} dataSet={{ media: ids.center }}>
-              <ScrollView>
+              <ScrollView showsVerticalScrollIndicator={false}>
                 {refs.map((ref, id) => {
                   return (
                     <View key={id}>

@@ -337,23 +337,23 @@ const appSlides = {
             numberList: [
                 {
                     id: '1',
-                    bullet: `Your attitude can take you everywhere or nowhere—you decide.`
+                    bullet: [`Your attitude can take you everywhere or nowhere—you decide.`]
                 },
                 {
                     id: '2',
-                    bullet: `You CAN change the way you think and feel.`
+                    bullet: [`You CAN change the way you think and feel.`]
                 },
                 {
                     id: '3',
-                    bullet: `You should not share your life with people who are constantly cynical, critical and angry.`
+                    bullet: [`You should not share your life with people who are constantly cynical, critical and angry.`]
                 },
                 {
                     id: '4',
-                    bullet: `Watch your nonverbal communication.`
+                    bullet: [`Watch your nonverbal communication.`]
                 },
                 {
                     id: '5',
-                    bullet: `Give off a positive image with your body.`
+                    bullet: [`Give off a positive image with your body.`]
                 },
             ],
             image: Thumbnail1,
@@ -586,19 +586,19 @@ const appSlides = {
                 },
                 {
                     id: '2',
-                    bullet: `When entering a room, it is your responsibility to greet those already in the room.`
+                    bullet: [`When entering a room, it is your responsibility to greet those already in the room.`]
                 },
                 {
                     id: '3',
-                    bullet: `When someone is speaking, do not interrupt or speak over her. Let her finish her point or thought, then begin to speak.`
+                    bullet: [`When someone is speaking, do not interrupt or speak over her. Let her finish her point or thought, then begin to speak.`]
                 },
                 {
                     id: '4',
-                    bullet: `Show that you are listening by facing and looking at the speaker.`
+                    bullet: [`Show that you are listening by facing and looking at the speaker.`]
                 },
                 {
                     id: '5',
-                    bullet: `Do not talk with your mouth full.`
+                    bullet: [`Do not talk with your mouth full.`]
                 }
             ],
             image: Thumbnail2,
@@ -836,15 +836,15 @@ const appSlides = {
             numberList: [
                 {
                     id: '1',
-                    bullet: `Remember that your hair is just that—your hair. Just because a hairstyle looks great on someone else, that doesn’t mean it will look the same on you. Each person’s hair reacts differently to cuts, colors, lengths, and many other things.`
+                    bullet: [`Remember that your hair is just that—your hair. Just because a hairstyle looks great on someone else, that doesn’t mean it will look the same on you. Each person’s hair reacts differently to cuts, colors, lengths, and many other things.`]
                 },
                 {
                     id: '2',
-                    bullet: `Find a salon that makes you feel safe when you are there—meaning, you should be able to go there free from fear of leaving with a cut, color and/or style that you don’t want.`,
+                    bullet: [`Find a salon that makes you feel safe when you are there—meaning, you should be able to go there free from fear of leaving with a cut, color and/or style that you don’t want.`],
                 },
                 {
                     id: '3',
-                    bullet: `Get a great haircut. A great cut is one that flatters the natural shape of your face. To learn your face shape, pull your hair back off your face and tie it in a ponytail if possible, or if it is short, slick it back. Then look in the mirror and trace your face shape (along your hairline) on the mirror with a bar of soap. There are five basic face shapes: round, square, oval, diamond, and heart.`,
+                    bullet: [`Get a great haircut. A great cut is one that flatters the natural shape of your face. To learn your face shape, pull your hair back off your face and tie it in a ponytail if possible, or if it is short, slick it back. Then look in the mirror and trace your face shape (along your hairline) on the mirror with a bar of soap. There are five basic face shapes: round, square, oval, diamond, and heart.`],
                     bulletPoints: [
                         `Round—avoid cuts that stop on the cheeks or lay on your face. Instead, use longer hair layers to frame the face.`,
                         `Square—avoid cuts with straight bangs and hanging hair. Try adding some wispy bangs around the cheek.`,
@@ -854,19 +854,19 @@ const appSlides = {
                 },
                 {
                     id: '4',
-                    bullet: `Know your color scheme. It’s great to want blond highlights, but they should be the shade of blond that is within your color scheme.`
+                    bullet:[ `Know your color scheme. It’s great to want blond highlights, but they should be the shade of blond that is within your color scheme.`]
                 },
                 {
                     id: '5',
-                    bullet: `Keep your hair clean and your scalp conditioned. Regular hair washing is necessary to reduce dandruff. Make sure you are also cleaning your combs and brushes each time you wash your hair. Conditioning your scalp keeps it from being dry and reduces breakage. It also gives hair a beautiful shine and holds in moisture. The type of conditioner you choose varies depending on your type of hair and ethnicity. Check with your stylist.`
+                    bullet: [`Keep your hair clean and your scalp conditioned. Regular hair washing is necessary to reduce dandruff. Make sure you are also cleaning your combs and brushes each time you wash your hair. Conditioning your scalp keeps it from being dry and reduces breakage. It also gives hair a beautiful shine and holds in moisture. The type of conditioner you choose varies depending on your type of hair and ethnicity. Check with your stylist.`]
                 },
                 {
                     id: '6',
-                    bullet: `Keep your hair manageable. Do this by keeping your hair-ends trimmed once a month.`
+                    bullet: [`Keep your hair manageable. Do this by keeping your hair-ends trimmed once a month.`]
                 },
                 {
                     id: '7',
-                    bullet: `Enjoy your hair`
+                    bullet: [`Enjoy your hair`]
                 },
             ],
             image: Thumbnail3,

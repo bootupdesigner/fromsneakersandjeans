@@ -16,6 +16,8 @@ import appSlides from '../../assets/slides/appSlides';
 
 import StopPlay from '../../assets//stopPlay';
 import Heading from '../../assets/heading';
+import Paragraphs from '../../assets/paragraphs';
+import Avatar from '../../assets/Avatar';
 
 const introduction = () => {
 
@@ -81,23 +83,12 @@ const introduction = () => {
                         return (
 
                             <View key={id} style={styles.content}>
-                                <View style={styles.left}>
-                                    <Image style={styles.image} source={Thumbnail} accessibilityLabel={slide.imageAlt} />
-                                </View>
-                                <View style={styles.center} dataSet={{ media: ids.center }}>
-                                    <ScrollView>
-                                        {slide.summary ?
-                                            slide.summary.map((paragraph, index) => (
-                                                <View style={styles.row} key={index}>
+                                <Avatar source={Thumbnail} alt={slide.imageAlt} />
 
-                                                    <View>
-                                                        <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
-                                                            <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
-                                                        </TouchableOpacity>
-                                                    </View>
-                                                    <Text style={styles.paragraph}>{paragraph}</Text>
-                                                </View>
-                                            )) : null}
+                                <View style={styles.center} dataSet={{ media: ids.center }}>
+                                    <ScrollView showsVerticalScrollIndicator={false}>
+                                        {slide.summary ?
+                                            slide.summary.map((paragraph, index) => <Paragraphs paragraph={paragraph} key={index} />) : null}
 
                                         {slide.quote ?
                                             slide.quote.map((paragraph, index) => (

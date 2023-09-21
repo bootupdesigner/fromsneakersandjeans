@@ -14,10 +14,15 @@ import Thumbnail from '../../assets/images/chapter-3-thumbnail.png';
 
 import appSlides from '../../assets/slides/appSlides';
 
-
 import StopPlay from '../../assets//stopPlay';
 import Heading from '../../assets/heading';
 import BulletPoints from '../../assets/bulletPoints';
+import NumberList from '../../assets/numberList';
+import WordDefinition from '../../assets/wordDefinition';
+import Paragraphs from '../../assets/paragraphs';
+import BulletsBoldHeading from '../../assets/bulletsBoldHeading';
+import BoldUnderlineHeading from '../../assets/boldUnderlineHeading';
+import Avatar from '../../assets/Avatar';
 
 const positude = () => {
     const chapterTitleAlt = 'positude chapter';
@@ -73,88 +78,45 @@ const positude = () => {
 
                 {/* page header and navigation */}
                 <Heading nextChapter={nextChapter} chapterTitle={chapterTitle} titleAlt={chapterTitleAlt} />
-               
-               {/* beginning of swiper view */}
-               
+
+                {/* beginning of swiper view */}
+
                 <Swiper controlsProps={{ dotsPos: 'bottom' }} onIndexChanged={(i) => { setCurrentSlide(slides[i]) }} showsButtons={true} loop={false} >
                     {slides.map((slide, id) => {
                         return (
                             <View key={id} style={styles.content}>
-                                <View style={styles.left}>
-                                    <Image style={styles.image} source={Thumbnail} accessibilityLabel={slide.imageAlt} />
-                                </View>
+                                <Avatar source={Thumbnail} alt={slide.imageAlt} />
 
                                 <View style={styles.center} dataSet={{ media: ids.center }}>
-                                    <ScrollView>
+                                    <ScrollView showsVerticalScrollIndicator={false}>
 
-                                        {slide.heading ? <Text style={styles.boldUnderline}>{slide.heading}</Text> : null}
+                                        {slide.heading ? <BoldUnderlineHeading slide={slide} /> : null}
 
                                         {slide.summary ?
-                                            slide.summary.map((paragraph, index) => (
-                                                <View style={styles.row} key={index}>
-
-                                                    <View>
-                                                        <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
-                                                            <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
-                                                        </TouchableOpacity>
-                                                    </View>
-                                                    <Text key={index} style={styles.paragraph}>{paragraph}</Text>
-                                                </View>
-                                            )) : null}
+                                            slide.summary.map((paragraph, index) => <Paragraphs key={index} paragraph={paragraph} />) : null}
 
                                         {slide.bullets ?
                                             slide.bullets.map((point, index) => {
                                                 return (
                                                     <View key={index}>
-                                                        {point.heading ? <Text style={styles.bold}>{point.heading}</Text> : null}
+                                                        {point.heading ? <BulletsBoldHeading point={point} /> : null}
 
-                                                        {point.bullet ? point.bullet.map((paragraph, index) => {
-                                                            return (
-                                                                <BulletPoints key={index} paragraph={paragraph}/>
-                                                            )
-                                                        }) : null}
+                                                        {point.bullet ? point.bullet.map((paragraph, index) => <BulletPoints key={index} paragraph={paragraph} />) : null}
 
-                                                        {point.summary ? point.summary.map((paragraph, index) => (
-                                                            <View style={styles.row} key={index} >
-                                                                <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
-                                                                    <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
-                                                                </TouchableOpacity>
-                                                                <Text style={styles.paragraph}>{paragraph}</Text>
-                                                            </View>
-                                                        )) : null}
+                                                        {point.summary ? point.summary.map((paragraph, index) => <Paragraphs key={index} paragraph={paragraph} />) : null}
                                                     </View>
 
                                                 )
                                             }) : null}
 
                                         {slide.numberList ?
-                                            slide.numberList.map((point, id) => (
-                                                <View key={id}>
-                                                    {point.word ?
-                                                        <View style={styles.row}>
-                                                            <TouchableOpacity style={styles.listen} onPress={() => { speakText(point.id + '' + point.word + '' + point.definition) }}>
-                                                                <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
-                                                            </TouchableOpacity>
+                                            slide.numberList.map((point, index) => (
+                                                <View key={index}>
+                                                    {point.word ? <WordDefinition point={point} /> : null}
 
-                                                            <View style={styles.list}>
-                                                                <Text style={styles.bulletNumbers}>{point.id}.</Text>
-                                                                <Text style={styles.listData}>{point.word ? <Text style={styles.underline}>{point.word}</Text> : null} {point.definition}</Text>
-                                                            </View>
-                                                        </View>
-                                                        : null}
-
-                                                    {point.bullet ?
-                                                        <View style={styles.row}>
-                                                            <TouchableOpacity style={styles.listen} onPress={() => { speakText(point.id + '' + point.bullet) }}>
-                                                                <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
-                                                            </TouchableOpacity>
-
-                                                            <View style={styles.list}>
-                                                                <Text style={styles.bulletNumbers}>{point.id}.</Text>
-                                                                <Text style={styles.listData}>{point.bullet}</Text>
-                                                            </View>
-                                                        </View>
-                                                        : null}
+                                                    {point.bullet ? point.bullet.map((paragraph, id) =>
+                                                        <NumberList key={id} paragraph={paragraph} number={point} />
+                                                    ) : null}
                                                 </View>
                                             )) : null}
 
@@ -162,7 +124,7 @@ const positude = () => {
                                 </View>
 
                                 <View style={styles.right}>
-                                    <StopPlay/>
+                                    <StopPlay />
                                     {slide.pinkPosi ?
                                         <Pressable onPress={() => setModalVisible(true)}>
                                             <Image style={styles.navImages} source={pinkPosiImage} accessibilityLabel='visit next chapter' />
@@ -177,7 +139,7 @@ const positude = () => {
     )
 };
 
-const {ids, styles} = StyleSheet.create({
+const { ids, styles } = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',

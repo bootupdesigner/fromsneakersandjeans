@@ -15,6 +15,7 @@ import appSlides from '../../assets/slides/appSlides';
 
 import StopPlay from '../../assets//stopPlay';
 import Heading from '../../assets/heading';
+import Avatar from '../../assets/Avatar';
 
 const safety = () => {
     const router = useRouter();
@@ -77,11 +78,10 @@ const safety = () => {
                     {slides.map((slide, id) => {
                         return (
                             <View key={id} style={styles.content}>
-                                <View style={styles.left}>
-                                    <Image style={styles.image} source={slide.image} accessibilityLabel={slide.imageAlt} />
-                                </View>
+                            <Avatar source={slide.image} alt={slide.imageAlt} />
+                            
                                 <View style={styles.center} dataSet={{ media: ids.center }}>
-                                    <ScrollView>
+                                    <ScrollView showsVerticalScrollIndicator={false}>
                                         {slide.heading ? <Text style={styles.boldUnderline}>{slide.heading}</Text> : null}
 
                                         {slide.summary ?

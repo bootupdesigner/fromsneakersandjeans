@@ -45,7 +45,7 @@ const closing = () => {
                             <View key={id} style={styles.content}>
                                 <Avatar source={slide.image} alt={slide.imageAlt} />
                                 <View style={styles.center} dataSet={{ media: ids.center }}>
-                                    <ScrollView style={styles.scrollContent}>
+                                    <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollContent}>
 
                                         {slide.intro ?
                                             slide.intro.map((paragraph, index) => (

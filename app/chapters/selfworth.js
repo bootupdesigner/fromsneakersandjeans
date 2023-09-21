@@ -20,7 +20,11 @@ import Heading from '../../assets/heading';
 import BulletPoints from '../../assets/bulletPoints';
 import NumberList from '../../assets/numberList';
 import BulletsBoldHeading from '../../assets/bulletsBoldHeading';
-
+import Avatar  from '../../assets/Avatar';
+import BoldUnderlineHeading
+ from '../../assets/boldUnderlineHeading';
+ import Paragraphs from '../../assets/paragraphs';
+ 
 const selfworth = () => {
 
     const router = useRouter();
@@ -89,13 +93,11 @@ const selfworth = () => {
                     {slides.map((slide, id) => {
                         return (
                             <View key={id} style={styles.content}>
-                                <View style={styles.left}>
-                                    <Image style={styles.image} source={Thumbnail} accessibilityLabel={thumbnail_alt} />
-                                </View>
+                            <Avatar source={Thumbnail} alt={thumbnail_alt} />
 
                                 <View style={styles.center} dataSet={{ media: ids.center }}>
-                                    <ScrollView>
-                                        {slide.heading ? <Text style={styles.boldUnderline}>{slide.heading}</Text> : null}
+                                    <ScrollView showsVerticalScrollIndicator={false}>
+                                        {slide.heading ? <BoldUnderlineHeading slide={slide} />  : null}
 
                                         {slide.bullets ? slide.bullets.map((point, index) => (
                                             <View key={index}>
@@ -106,16 +108,9 @@ const selfworth = () => {
                                                 ) : null}
 
                                                 {point.paragraph ?
-                                                    point.paragraph.map((paragraph, index) => (
-                                                        <View key={index} style={styles.row}>
-                                                            <View>
-                                                                <TouchableOpacity style={styles.listen} onPress={() => { speakText(paragraph) }}>
-                                                                    <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
-                                                                </TouchableOpacity>
-                                                            </View>
-                                                            <Text style={styles.paragraph}>{paragraph}</Text>
-                                                        </View>
-                                                    )) : null}
+                                                    point.paragraph.map((paragraph, index) => 
+                                                        <Paragraphs key={index} paragraph={paragraph} />
+                                                    ) : null}
                                             </View>
                                         )) : null}
                                         {slide.table ?
@@ -142,7 +137,9 @@ const selfworth = () => {
                                             return (
                                                 <View key={index}>
                                                     {point.bullet.map((paragraph, id) => {
-                                                        return (<NumberList key={id} paragraph={paragraph} number={point} />)
+                                                        return (
+                                                        <NumberList key={id} paragraph={paragraph} number={point} />
+                                                        )
                                                     })}
                                                 </View>
                                             )

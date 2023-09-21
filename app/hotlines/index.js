@@ -76,7 +76,7 @@ const hotlines = () => {
                                     </View>
 
                                     <View style={styles.center}>
-                                        <ScrollView>
+                                        <ScrollView showsVerticalScrollIndicator={false}>
                                             {slide.contacts ?
                                                 slide.contacts.map((contact, id) => (
                                                     <View key={id} style={styles.separator}>

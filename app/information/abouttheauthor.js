@@ -1,4 +1,4 @@
-import { View, Image, ImageBackground, TouchableOpacity, Text, ScrollView } from 'react-native';
+import { View, Image, ImageBackground, TouchableOpacity, Linking, Text, ScrollView } from 'react-native';
 import React from 'react';
 import { Link, useRouter } from "expo-router";
 import Swiper from 'react-native-web-swiper';
@@ -7,51 +7,31 @@ import StyleSheet from 'react-native-media-query';
 
 import backgroundImage from '../../assets/images/sneakers_app_background.jpg';
 import referenceButton from '../../assets/images/references.png';
-import chapterTitle from '../../assets/images/infoTitle.png';
+import chapterTitle from '../../assets/images/aboutTheAuthor.png';
 import backButton from '../../assets/images/backButton.png';
 import privacyThumbnail from '../../assets/images/informationIcon.png';
-
+import candiMeridith from '../../assets/images/candiMeridith.jpg'
 import StopPlay from '../../assets//stopPlay';
+import Paragraphs from '../../assets/paragraphs';
+import playButton from '../../assets/images/playButton.png';
 
-const menu = [
-   /* {
-        id: 1,
-        resource: 'About The Author',
-        source: '/about-the-author'
-    }, */
-    {
-        id: 2,
-        resource: 'Hotlines',
-        source: '/hotlines'
-    },
-    {
-        id: 3,
-        resource: 'Privacy Policy',
-        source: '/privacy-policy'
-    },
-    {
-        id: 4,
-        resource: 'References',
-        source: '/references'
-    },
-    {
-        id: 5,
-        resource: 'Websites',
-        source: '/websites'
-    },
-    {
-        id: 6,
-        resource: 'About The Author',
-        source: '/information/abouttheauthor'
-    },
-]
+const paragraph = `Candi Meridith, MPH is a motivational speaker and public health educator. She has been in the fields of health education and public speaking for over 20 years. With a Master of Public Health degree in Health Promotion and Disease Prevention and a Bachelor of Science degree in Psychology, Candi believes that having the conversation is the first step toward growing into a better person, and she hopes "From Sneakers & Jeans" will encourage you to talk. www.PinkPosGirls.com`;
 
-const information = () => {
+const AboutTheAuthor = () => {
     const router = useRouter();
 
-    const chapterTitleAlt = 'information title';
-
-    const pageList = menu;
+    const chapterTitleAlt = 'About The Author Candi';
+    const openLink = () => {
+        Linking.openURL('https://www.PinkPosGirls.com');
+    }
+    const PosiLink = () => {
+        let story = paragraph;
+        let newStory = story.replace(
+            `www.PinkPosGirls.com`,
+            '[PinkPosGirls.com]'
+        );
+        return <Text>{newStory}</Text>;
+    }
 
     return (
         <View style={styles.container}>
@@ -65,7 +45,7 @@ const information = () => {
                         <Image style={styles.navImages} source={backButton} accessibilityLabel='back to chapters' />
                     </TouchableOpacity>
 
-                    <Image style={styles.titleImages} dataSet={{media: ids.titleImages}} source={chapterTitle} accessibilityLabel={chapterTitleAlt} />
+                    <Image style={styles.titleImages} dataSet={{ media: ids.titleImages }} source={chapterTitle} accessibilityLabel={chapterTitleAlt} />
 
                     <TouchableOpacity onPress={() => {
                         router.push('/references')
@@ -86,9 +66,25 @@ const information = () => {
 
                         <View style={styles.center}>
                             <ScrollView showsVerticalScrollIndicator={false}>
-                                {menu.map((page, index) => (
-                                        <Text key={index} style={styles.links} onPress={()=>router.push(page.source)} href={page.source}>{page.resource}</Text>
-                                ))}
+                                <View style={{ justifyContent: 'center', alignItems: 'center' }} >
+                                    <Text style={{ fontSize: 16, fontWeight: "500", textAlign: 'center' }}>Candi Meridith, MPH</Text>
+                                    <Image style={styles.image} source={candiMeridith} accessibilityLabel="Candi Meridith MPH" />
+
+                                    <View style={styles.row} >
+                                        <TouchableOpacity style={styles.listen} onPress={() => { speakText(props.paragraph) }}>
+                                            <Image style={styles.playOptions} source={playButton} accessibilityLabel='play button' />
+                                        </TouchableOpacity>
+                                        <Text style={{ textAlign: "center" }}>
+                                            {paragraph.split('www.PinkPosGirls.com').map((part, index) => {
+                                                if (index % 2 === 0) {
+                                                    return <Text key={index}>{part}</Text>;
+                                                } else {
+                                                    return <Text key={index} onPress={openLink} style={{ color: 'blue' }}>www.PinkPosGirls.com</Text>;
+                                                }
+                                            })}
+                                        </Text>
+                                    </View>
+                                </View>
                             </ScrollView>
                         </View>
                         <View style={styles.right}>
@@ -101,10 +97,8 @@ const information = () => {
     )
 }
 
-export default information;
 
-
-const {ids, styles} = StyleSheet.create({
+const { ids, styles } = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -184,10 +178,22 @@ const {ids, styles} = StyleSheet.create({
         flexDirection: 'row',
         margin: 5,
         paddingVertical: 3
-    },
-    playOptions: {
+    }, playOptions: {
         width: 24,
         height: 24
+    },
+    row: {
+        flexDirection: 'row',
+        width: '80%'
+    },
+    paragraph: {
+        fontSize: 16,
+        marginVertical: 2,
+    },
+    listen: {
+        flexDirection: 'row',
+        margin: 5,
+        paddingVertical: 3
     },
     links: {
         textAlign: 'center',
@@ -196,3 +202,6 @@ const {ids, styles} = StyleSheet.create({
         paddingVertical: 5,
     },
 });
+
+export default AboutTheAuthor
+

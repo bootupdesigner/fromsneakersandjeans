@@ -98,7 +98,7 @@ const websites = () => {
                         </View>
 
                         <View style={styles.center}>
-                            <ScrollView>
+                            <ScrollView showsVerticalScrollIndicator={false}>
                                 {slides.map((slide, id) => {
                                     return (
                                         <View key={id} style={styles.separator}>
